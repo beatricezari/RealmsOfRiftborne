@@ -12,6 +12,8 @@ class StartMenu extends Narration {
     static Scanner scan = new Scanner(System.in);
 
     public void displayStartMenu(){
+        //Menu handler = new Menu();
+
         System.out.println("+------------------------------+");
         System.out.println("|        Mystvale Academy      |");
         System.out.println("+------------------------------+");
@@ -31,6 +33,7 @@ class StartMenu extends Narration {
             case "1":
                 System.out.println("Starting the game...");
                 prologueNarration();
+                //handler.defaultMainMenu();;
                 break;
 
             case "2":
@@ -84,9 +87,12 @@ class Menu extends Narration {
                         hasVisitedAcademy = true;
                     } 
                     
-                    System.out.println("------------------------");
-                    System.out.println("Where do you want to go?");
-                    System.out.println("------------------------");
+                    System.out.println();
+                    System.out.println("┌──────────────────────────────┐");
+                    System.out.println("│   Where do you want to go?   │");
+                    System.out.println("└──────────────────────────────┘");
+                    System.out.println();
+
                     academyMapMenu();
                     
                     break;
@@ -97,9 +103,11 @@ class Menu extends Narration {
                         hasVisitedShop = true;
                     } 
                     
-                    System.out.println("--------------------");
-                    System.out.println("Welcome to the shop");
-                    System.out.println("--------------------");
+                    System.out.println();
+                    System.out.println("┌──────────────────────────┐");
+                    System.out.println("│    Welcome to the shop   │");
+                    System.out.println("└──────────────────────────┘");
+                    System.out.println();
                     
                     
                     //shopFunction();
@@ -130,9 +138,11 @@ class Menu extends Narration {
                         hasVisitedArea1 = true;
                     }
                     
-                    System.out.println("------------------------");
-                    System.out.println("Beware of forest entities");
-                    System.out.println("------------------------");
+                    System.out.println();
+                    System.out.println("┌────────────────────────────────────┐");
+                    System.out.println("│  Beware of forest entities         │");
+                    System.out.println("└────────────────────────────────────┘");
+                    System.out.println();
                 
                     break;
                     
@@ -145,10 +155,12 @@ class Menu extends Narration {
                         hasVisitedArea2 = true;
                     }
                     
-                    System.out.println("------------------------");
-                    System.out.println("Beware of swamp entities");
-                    System.out.println("------------------------");
-                    
+                    System.out.println();
+                    System.out.println("┌────────────────────────────────┐");
+                    System.out.println("│  Beware of swamp entities      │");
+                    System.out.println("└────────────────────────────────┘");
+                    System.out.println();
+
                     break;
                     
                 case "6":
@@ -160,9 +172,11 @@ class Menu extends Narration {
                         hasVisitedArea3 = true;
                     }
                     
-                    System.out.println("------------------------------------------");
-                    System.out.println("Warning! You may or may not come out alive");
-                    System.out.println("------------------------------------------");
+                    System.out.println();
+                    System.out.println("┌──────────────────────────────────────────────────┐");
+                    System.out.println("│  Warning! You may or may not come out alive      │");
+                    System.out.println("└──────────────────────────────────────────────────┘");
+                    System.out.println();
                     
                     break;
 
@@ -214,10 +228,12 @@ class Menu extends Narration {
                         hasVisitedLibrary = true;
                     }
                     
-                    System.out.println("------------------------------------");
-                    System.out.println("Shh! Be mindful, others are studying");
-                    System.out.println("------------------------------------");
-                    
+                    System.out.println();
+                    System.out.println("┌──────────────────────────────────────────────┐");
+                    System.out.println("│  Shh! Be mindful, others are studying         │");
+                    System.out.println("└──────────────────────────────────────────────┘");
+                    System.out.println();
+
                     break;
 
                 case "2":
@@ -226,10 +242,12 @@ class Menu extends Narration {
                         hasVisitedCanteen = true;
                     }
                     
-                    System.out.println("--------------------");
-                    System.out.println("Buy at your own risk");
-                    System.out.println("--------------------");
-                
+                    System.out.println();
+                    System.out.println("┌────────────────────────────┐");
+                    System.out.println("│  Buy at your own risk      │");
+                    System.out.println("└────────────────────────────┘");
+                    System.out.println();
+
                     break;
 
                 case "3":
@@ -238,9 +256,12 @@ class Menu extends Narration {
                         hasVisitedGym = true;
                     }
                     
-                    System.out.println("----------------------------------");
-                    System.out.println("Are you ready to be physically fit?");
-                    System.out.println("----------------------------------");
+                    System.out.println();
+                    System.out.println("┌────────────────────────────────────────────┐");
+                    System.out.println("│  Are you ready to be physically fit?       │");
+                    System.out.println("└────────────────────────────────────────────┘");
+                    System.out.println();
+
                     
                     break;
 
@@ -253,9 +274,11 @@ class Menu extends Narration {
                         hasVisitedOffice = true;
                     }
                     
-                    System.out.println("-----------------------------");
-                    System.out.println("May the odds be in your favor");
-                    System.out.println("-----------------------------");
+                    System.out.println();
+                    System.out.println("┌────────────────────────────────────────────┐");
+                    System.out.println("│  May the odds be in your favor             │");
+                    System.out.println("└────────────────────────────────────────────┘");
+                    System.out.println();
                     
                     break;
 
