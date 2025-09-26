@@ -8,7 +8,7 @@ import java.util.Scanner;
 // Shops
 // Inventory
 
-class StartMenu { 
+class StartMenu extends Narration { 
     static Scanner scan = new Scanner(System.in);
 
     public void displayStartMenu(){
@@ -30,6 +30,7 @@ class StartMenu {
         switch (startMenuChoice) {
             case "1":
                 System.out.println("Starting the game...");
+                prologueNarration();
                 break;
 
             case "2":
