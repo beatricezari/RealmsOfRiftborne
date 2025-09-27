@@ -94,7 +94,10 @@ class Menu extends Narration {
             System.out.println("| 6. Area 3                                |");
             System.out.println("| 7. Exit Game                             |");
             System.out.println("+------------------------------------------+");
-            System.out.print("    Enter your choice (1-7): ");
+            System.out.println("      ┌──────────────────────────────┐");
+            System.out.println("      │   Where do you want to go?   │");
+            System.out.println("      └──────────────────────────────┘");
+            System.out.print("Enter your choice (1-7): ");
 
             
             String mainMenuChoice = scanner.nextLine();
@@ -103,11 +106,6 @@ class Menu extends Narration {
             
             switch (mainMenuChoice){
                 case "1":
-                    System.out.println("┌──────────────────────────────┐");
-                    System.out.println("│   Where do you want to go?   │");
-                    System.out.println("└──────────────────────────────┘");
-                    System.out.println();
-
                     if(!hasVisitedAcademy){
                         academyNarration();
                         hasVisitedAcademy = true;
@@ -260,7 +258,6 @@ class AcademyMenu extends Menu{
             System.out.println("| 6. Main Menu                        |");
             System.out.println("+-------------------------------------+");
             System.out.print("Enter your choice (1-6): ");
-
 
             String academyMapMenuChoice = scanner.nextLine();
 
