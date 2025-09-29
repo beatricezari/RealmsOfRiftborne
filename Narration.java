@@ -175,7 +175,7 @@ public class Narration{
 
     // Array Iteration in order to avoid for loop usage repitition
     public static void playSection(String[] section) {
-        System.out.println("\nPress ENTER to continue...");
+        System.out.println("Press ENTER to continue...");
         
         for (int i = 0; i < section.length; i++) {
             scanner.nextLine();
@@ -226,6 +226,7 @@ public class Narration{
         playSection(inventory);
     }
 
+    //box format
     public static void choiceSwordsman(){
         System.out.println();
         System.out.println("┌────────────────────┐");
