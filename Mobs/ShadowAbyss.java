@@ -1,14 +1,14 @@
 package Mobs;
 
-public class Goblin extends Mobs {
-    private String skill1 = "Throw Rock";
-    private String skill2 = "Rock Barrage";
+public class ShadowAbyss extends Mobs {
+    private String skill1 = "Dark Pulse";
+    private String skill2 = "Abyssal Blink";
     private int manaCostSkill1 = 50;
     private int manaCostSkill2 = 250;
     private int manaCapacity = getMana();
 
-    public Goblin() {
-        super("Goblin", 1500, 200, 100, 150, 5, 300);
+    public ShadowAbyss() {
+        super("Shadow Abyss", 3000, 400, 200, 100, 10, 200);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Goblin extends Mobs {
 
         return (int) Math.round(damage);
     }
-    
+
     @Override
     public int ultimate(){
         System.out.println(getName() + " has no ultimate skill!");
@@ -59,20 +59,5 @@ public class Goblin extends Mobs {
         return 0; 
 
     }
-
-
-
     
-
-
-
-
-
-
-
-
-
-
-
-
 }
