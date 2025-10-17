@@ -1,9 +1,10 @@
 package Menu;
 
+import Area.ForestOfReverie;
+import Area.ForsakenLands;
+import Area.ReveriesEdge;
 import Hero.*;
 import Narration.*;
-import Area.ForestOfReverie;
-
 import java.util.Scanner;
 
 public class Menu extends Narration {

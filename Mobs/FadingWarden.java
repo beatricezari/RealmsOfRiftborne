@@ -1,15 +1,19 @@
 package Mobs;
 
-public class Goblin extends Mobs {
-    private String skill1 = "Throw Rock";
-    private String skill2 = "Rock Barrage";
+public class FadingWarden extends Mobs {
+    private String skill1 = "Ethereal Slash";
+    private String skill2 = "Ghost Step";
+    private String ultimate = "Oblivion Veil";
+    private int manaCostUltimate = 500;
     private int manaCostSkill1 = 50;
     private int manaCostSkill2 = 250;
     private int manaCapacity = getMana();
 
-    public Goblin() {
-        super("Goblin", 1500, 200, 100, 150, 5, 300);
+    public FadingWarden() {
+        super("Fading Warden", 4000, 500, 250, 90, 12, 100);
     }
+
+
 
     @Override
     public int basicAttack() {
@@ -51,28 +55,17 @@ public class Goblin extends Mobs {
 
         return (int) Math.round(damage);
     }
-    
+
     @Override
     public int ultimate(){
-        System.out.println(getName() + " has no ultimate skill!");
+        double damage = getAttack() * (int) 2.0;
+        System.out.println(getName() + " used " + ultimate + "!");
+        System.out.println(ultimate + " deals " + damage + " damage!");
 
-        return 0; 
+        int manaReduce = getMana() - manaCostUltimate;
+        setMana(manaReduce);
 
+        return (int) Math.round(damage);
     }
-
-
-
     
-
-
-
-
-
-
-
-
-
-
-
-
 }
