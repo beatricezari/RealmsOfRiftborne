@@ -1,6 +1,8 @@
 package Mobs;
 
-public abstract class Mobs {
+import Hero.Entity;
+
+public abstract class Mobs extends Entity {
     private String name;
     private int hp;
     private int attack;

@@ -3,20 +3,10 @@ package Boss;
 import Hero.*;
 
 public class Elderthorn extends Boss {
-    private String skill1, skill2, skill3, ultimate;
-    private int manaCostSkill1, manaCostSkill2, manaCostSkill3, manaCostUltimate;
     private int skillCd1, skillCd2, skillCd3, skillCdU;
 
     public Elderthorn() {
-        super(12500, 450, 1000, 150, 20, "Elderthorn");
-        this.skill1 = "Thorn Slash";
-        this.skill2 = "Thorn Cage";
-        this.skill3 = "Ancient Renewal";
-        this.ultimate = "Eternal Wildstorm";
-        this.manaCostSkill1 = 50;
-        this.manaCostSkill2 = 250;
-        this.manaCostSkill3 = 350;
-        this.manaCostUltimate = 750;
+        super(12500, 450, 1000, 150, 20, "Elderthorn", "Thorn Slash", "Thorn Cage", "Ancient Renewal", "Eternal Wildstorm", 50, 250, 350, 750);
         this.skillCd1 = 4;
         this.skillCd2 = 6;
         this.skillCd3 = 6;
@@ -52,14 +42,14 @@ public class Elderthorn extends Boss {
 
         double damage = getAttack() * 1.5;
 
-        int manaReduce = getMana() - manaCostSkill1;
+        int manaReduce = getMana() - getManaCostSkill1();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
 
-        System.out.println(getName() + " used " + skill1 + "!");
-        System.out.println(skill1 + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getSkill1() + "!");
+        System.out.println(getSkill1() + " deals " + damageDealt + " damage!");
 
 
         hero.setHp(hero.getHp() - damageDealt);
@@ -71,14 +61,14 @@ public class Elderthorn extends Boss {
 
         double damage = getAttack() * 1.8;
 
-        int manaReduce = getMana() - manaCostSkill2;
+        int manaReduce = getMana() - getManaCostSkill2();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
 
-        System.out.println(getName() + " used " + skill2 + "!");
-        System.out.println(skill2 + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getSkill2() + "!");
+        System.out.println(getSkill2() + " deals " + damageDealt + " damage!");
         
         hero.setHp(hero.getHp() - damageDealt);
     }
@@ -89,14 +79,14 @@ public class Elderthorn extends Boss {
 
         double damage = getAttack() * 1.9;
 
-        int manaReduce = getMana() - manaCostSkill3;
+        int manaReduce = getMana() - getManaCostSkill3();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
 
-        System.out.println(getName() + " used " + skill3 + "!");
-        System.out.println(skill3 + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getSkill3() + "!");
+        System.out.println(getSkill3() + " deals " + damageDealt + " damage!");
 
         hero.setHp(hero.getHp() - damageDealt);
     }
@@ -107,13 +97,13 @@ public class Elderthorn extends Boss {
 
         double damage = getAttack() * 2.3;
 
-        int manaReduce = getMana() - manaCostUltimate;
+        int manaReduce = getMana() - getManaCostUltimate();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
-        System.out.println(getName() + " used " + ultimate + "!");
-        System.out.println(ultimate + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getUltimate() + "!");
+        System.out.println(getUltimate() + " deals " + damageDealt + " damage!");
         
         hero.setHp(hero.getHp() - damageDealt);
     }

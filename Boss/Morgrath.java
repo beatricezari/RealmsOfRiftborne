@@ -3,20 +3,10 @@ package Boss;
 import Hero.*;
 
 public class Morgrath extends Boss {
-    private String skill1, skill2, skill3, ultimate;
-    private int manaCostSkill1, manaCostSkill2, manaCostSkill3, manaCostUltimate;
     private int skillCd1, skillCd2, skillCd3, skillCdU;
 
     public Morgrath() {
-        super(25000, 1000, 3000, 1000, 40, "Morgrath");
-        this.skill1 = "Swamp Maw";
-        this.skill2 = "Pestilent Ooze";
-        this.skill3 = "Putrid Renewal";
-        this.ultimate = "Crown of the Mire";
-        this.manaCostSkill1 = 375;
-        this.manaCostSkill2 = 480;
-        this.manaCostSkill3 = 425;
-        this.manaCostUltimate = 900;
+        super(25000, 1000, 3000, 1000, 40, "Morgrath", "Swamp Maw", "Pestilent Ooze", "Putrid Renewal", "Crown of the Mire", 375, 480, 425, 900);
         this.skillCd1 = 4;
         this.skillCd2 = 6;
         this.skillCd3 = 7;
@@ -51,14 +41,14 @@ public class Morgrath extends Boss {
 
         double damage = getAttack() * 1.5;
 
-        int manaReduce = getMana() - manaCostSkill1;
+        int manaReduce = getMana() - getManaCostSkill1();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
 
-        System.out.println(getName() + " used " + skill1 + "!");
-        System.out.println(skill1 + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getSkill1() + "!");
+        System.out.println(getSkill1() + " deals " + damageDealt + " damage!");
 
 
         hero.setHp(hero.getHp() - damageDealt);
@@ -70,14 +60,14 @@ public class Morgrath extends Boss {
 
         double damage = getAttack() * 1.8;
 
-        int manaReduce = getMana() - manaCostSkill2;
+        int manaReduce = getMana() - getManaCostSkill2();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
 
-        System.out.println(getName() + " used " + skill2 + "!");
-        System.out.println(skill2 + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getSkill2() + "!");
+        System.out.println(getSkill2() + " deals " + damageDealt + " damage!");
         
         hero.setHp(hero.getHp() - damageDealt);
     }
@@ -88,14 +78,14 @@ public class Morgrath extends Boss {
 
         double damage = getAttack() * 1.9;
 
-        int manaReduce = getMana() - manaCostSkill3;
+        int manaReduce = getMana() - getManaCostSkill3();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
 
-        System.out.println(getName() + " used " + skill3 + "!");
-        System.out.println(skill3 + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getSkill3() + "!");
+        System.out.println(getSkill3() + " deals " + damageDealt + " damage!");
 
         hero.setHp(hero.getHp() - damageDealt);
     }
@@ -106,13 +96,13 @@ public class Morgrath extends Boss {
 
         double damage = getAttack() * 2.3;
 
-        int manaReduce = getMana() - manaCostUltimate;
+        int manaReduce = getMana() - getManaCostUltimate();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
-        System.out.println(getName() + " used " + ultimate + "!");
-        System.out.println(ultimate + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getUltimate() + "!");
+        System.out.println(getUltimate() + " deals " + damageDealt + " damage!");
         
         hero.setHp(hero.getHp() - damageDealt);
     }

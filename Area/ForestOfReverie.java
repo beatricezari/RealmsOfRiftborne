@@ -7,7 +7,6 @@ import java.util.*;
 public class ForestOfReverie {
     static Random rand = new Random();
     static Scanner scan = new Scanner(System.in);
-    static Boss enemyBoss = new Elderthorn();
 
     public void enter(Hero hero) {
         System.out.println();
@@ -141,7 +140,7 @@ public class ForestOfReverie {
                 System.out.println("┌────────────────────┐");
                 System.out.println("│       BATTLE       │");
                 System.out.println("└────────────────────┘");
-                battle.fight(hero, enemyBoss);
+                battle.fight(hero, new Elderthorn());
                 valid = false; // Exit the loop after handling the choice
             } else if (choice == 'n'){
                 System.out.println("\nYou chose to avoid the Forest Guardian, Elderthorn and head back to the previous area.");

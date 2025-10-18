@@ -12,18 +12,12 @@ public class Hero {
     private String name;
     private String charClass;
     private String weapon;
-    private String skill1;
-    private String skill2;
-    private String ultimate;
-    private int manaCostSkill1;
-    private int manaCostSkill2;
-    private int manaCostUltimate;
+    private String skill1, skill2, ultimate;
+    private int manaCostSkill1, manaCostSkill2, manaCostUltimate;
     private int cooldown1 = 0;
     private int cooldown2 = 0;
     private int cooldownU = 0; 
-    private int skillCd1;
-    private int skillCd2;
-    private int skillCdU;
+    private int skillCd1, skillCd2, skillCdU;
     private int manaCap;
     private int gold;
 
@@ -31,7 +25,7 @@ public class Hero {
 
     }
 
-    public Hero(int hp, int attack, int mana, int defense, int speed, int level, String name, String charClass, String weapon, String skill1, String skill2, String ultimate, int manaCostSkill1, int manaCostSkill2, int manaCostUltimate, int skillCd1, int skillCd2, int skillCdU, int maxAtk, int maxMana, int maxDef) {
+    public Hero(int hp, int attack, int mana, int defense, int speed, int level, String name, String charClass, String weapon, String skill1, String skill2, String ultimate, int manaCostSkill1, int manaCostSkill2, int manaCostUltimate, int maxAtk, int maxMana, int maxDef) {
         this.hp = hp;
         this.attack = attack;
         this.mana = mana;
@@ -39,22 +33,19 @@ public class Hero {
         this.speed = speed;
         this.level = level;
         this.name = name;
-        this.charClass = charClass;
         this.weapon = weapon;
+        this.charClass = charClass;
         this.skill1 = skill1;
         this.skill2 = skill2;
         this.ultimate = ultimate;
         this.manaCostSkill1 = manaCostSkill1;
         this.manaCostSkill2 = manaCostSkill2;
         this.manaCostUltimate = manaCostUltimate;
-        this.skillCd1 = skillCd1;
-        this.skillCd2 = skillCd2;
-        this.skillCdU = skillCdU;
         setBaseStats(hp, attack, mana, defense);
         setMaxStats(maxAtk, maxMana, maxDef);
     }
 
-    public int basicAttack() {
+    public void basicAttack(Entity enemy) {
         int damage = multiplierB(getAttack(), getLevel());
         
         double manaRecovery = manaCap * 0.2;
@@ -66,10 +57,15 @@ public class Hero {
             setMana(addMana);
         }
 
-        return damage;
+        int damageDealt = damage - enemy.getDefense()/2;
+
+        System.out.println(getName() + " used Basic Attack!");
+        System.out.println("Basic Attack deals " + damageDealt + " damage!");
+
+        enemy.setHp(enemy.getHp() - damageDealt);
     }
 
-    public int skill1(){
+    public void skill1(Entity enemy){
         setCooldown1(skillCd1);
 
         int damage = multiplier1(getAttack(), getLevel());
@@ -79,10 +75,15 @@ public class Hero {
         int manaReduce = getMana() - scaledCost;
         setMana(manaReduce);
 
-        return damage;
+        int damageDealt = damage - enemy.getDefense()/2;
+
+        System.out.println(getName() + " used " + getSkill1() + "!");
+        System.out.println(getSkill1() + " deals " + damageDealt + " damage!");
+
+        enemy.setHp(enemy.getHp() - damageDealt);
     }
 
-    public int skill2(){
+    public void skill2(Entity enemy){
         setCooldown2(skillCd2);
 
         int damage = multiplier2(getAttack(), getLevel());
@@ -92,10 +93,15 @@ public class Hero {
         int manaReduce = getMana() - scaledCost;
         setMana(manaReduce);
 
-        return damage;
+         int damageDealt = damage - enemy.getDefense()/2;
+
+        System.out.println(getName() + " used " + getSkill2() + "!");
+        System.out.println(getSkill2() + " deals " + damageDealt + " damage!");
+
+        enemy.setHp(enemy.getHp() - damageDealt);
     }
 
-    public int ultimate(){
+    public void ultimate(Entity enemy){
         setCooldownU(skillCdU);
 
         int damage = multiplierU(getAttack(), getLevel());
@@ -105,7 +111,12 @@ public class Hero {
         int manaReduce = getMana() - scaledCost;
         setMana(manaReduce);
 
-        return damage;
+        int damageDealt = damage - enemy.getDefense()/2;
+
+        System.out.println(getName() + " used " + getUltimate() + "!");
+        System.out.println(getUltimate() + " deals " + damageDealt + " damage!");
+
+        enemy.setHp(enemy.getHp() - damageDealt);
     }
 
     //damage multiplier methods
@@ -131,6 +142,13 @@ public class Hero {
         double multiplier = 1.0 + 2.5 * Math.pow((L - 1) / 59.0, 2);
         double damageDealt = atk * multiplier;
         return (int) Math.round(damageDealt);
+    }
+
+    // Mana Scale cost
+    public int scaledCost(int manaCost){
+        int scaledCost = (int)(manaCost * (1 + 0.005 * (getLevel() - 1)));
+        
+        return scaledCost;
     }
 
     // Getters
@@ -208,6 +226,10 @@ public class Hero {
 
     public int getCooldownU() {
         return cooldownU;
+    }
+
+    public int getManaCap() {
+        return manaCap;
     }
 
     // Setters

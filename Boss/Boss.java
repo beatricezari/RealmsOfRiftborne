@@ -2,7 +2,7 @@ package Boss;
 
 import Hero.*;
 
-public class Boss {
+public class Boss extends Entity {
     private int hp;
     private int attack;
     private int mana;
@@ -22,13 +22,21 @@ public class Boss {
 
     }
 
-    public Boss(int hp, int attack, int mana, int defense, int speed, String name){
+    public Boss(int hp, int attack, int mana, int defense, int speed, String name, String skill1, String skill2, String skill3, String ultimate, int manaCostSkill1, int manaCostSkill2, int manaCostSkill3, int manaCostUltimate){
         this.hp = hp;
         this.attack = attack;
         this.mana = mana;
         this.defense = defense;
         this.speed = speed;
         this.name = name;
+        this.skill1 = skill1;
+        this.skill2 = skill2;
+        this.skill3 = skill3;
+        this.ultimate = ultimate;
+        this.manaCostSkill1 = manaCostSkill1;
+        this.manaCostSkill2 = manaCostSkill2;
+        this.manaCostSkill3 = manaCostSkill3;
+        this.manaCostUltimate = manaCostUltimate;
     }
 
     public void basicAttack(Hero hero) {

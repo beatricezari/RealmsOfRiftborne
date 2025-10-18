@@ -3,20 +3,10 @@ package Boss;
 import Hero.*;
 
 public class Azrael extends Boss {
-    private String skill1, skill2, skill3, ultimate;
-    private int manaCostSkill1, manaCostSkill2, manaCostSkill3, manaCostUltimate;
     private int skillCd1, skillCd2, skillCd3, skillCdU;
 
     public Azrael() {
-        super(30000, 5000, 4500, 1000, 40, "Azrael - Annihilation of Realms");
-        this.skill1 = "Eclipse Blades";
-        this.skill2 = "Eclipse Bind";
-        this.skill3 = "Umbral Rebirth";
-        this.ultimate = "Oblivion Embrace";
-        this.manaCostSkill1 = 350;
-        this.manaCostSkill2 = 500;
-        this.manaCostSkill3 = 450;
-        this.manaCostUltimate = 900;
+        super(30000, 5000, 4500, 1000, 40, "Azrael - Annihilation of Realms", "Eclipse Blades", "Eclipse Bind", "Umbral Rebirth", "Oblivion Embrace", 350, 500, 450, 900);
         this.skillCd1 = 4;
         this.skillCd2 = 6;
         this.skillCd3 = 7;
@@ -51,14 +41,14 @@ public class Azrael extends Boss {
 
         double damage = getAttack() * 1.5;
 
-        int manaReduce = getMana() - manaCostSkill1;
+        int manaReduce = getMana() - getManaCostSkill1();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
 
-        System.out.println(getName() + " used " + skill1 + "!");
-        System.out.println(skill1 + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getSkill1() + "!");
+        System.out.println(getSkill1() + " deals " + damageDealt + " damage!");
 
 
         hero.setHp(hero.getHp() - damageDealt);
@@ -70,14 +60,14 @@ public class Azrael extends Boss {
 
         double damage = getAttack() * 1.8;
 
-        int manaReduce = getMana() - manaCostSkill2;
+        int manaReduce = getMana() - getManaCostSkill2();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
 
-        System.out.println(getName() + " used " + skill2 + "!");
-        System.out.println(skill2 + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getSkill2() + "!");
+        System.out.println(getSkill2() + " deals " + damageDealt + " damage!");
         
         hero.setHp(hero.getHp() - damageDealt);
     }
@@ -88,14 +78,14 @@ public class Azrael extends Boss {
 
         double damage = getAttack() * 1.9;
 
-        int manaReduce = getMana() - manaCostSkill3;
+        int manaReduce = getMana() - getManaCostSkill3();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
 
-        System.out.println(getName() + " used " + skill3 + "!");
-        System.out.println(skill3 + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getSkill3() + "!");
+        System.out.println(getSkill3() + " deals " + damageDealt + " damage!");
 
         hero.setHp(hero.getHp() - damageDealt);
     }
@@ -106,13 +96,13 @@ public class Azrael extends Boss {
 
         double damage = getAttack() * 2.3;
 
-        int manaReduce = getMana() - manaCostUltimate;
+        int manaReduce = getMana() - getManaCostUltimate();
         setMana(manaReduce);
 
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
-        System.out.println(getName() + " used " + ultimate + "!");
-        System.out.println(ultimate + " deals " + damageDealt + " damage!");
+        System.out.println(getName() + " used " + getUltimate() + "!");
+        System.out.println(getUltimate() + " deals " + damageDealt + " damage!");
         
         hero.setHp(hero.getHp() - damageDealt);
     }
