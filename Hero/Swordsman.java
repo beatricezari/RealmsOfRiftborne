@@ -6,7 +6,7 @@ public class Swordsman extends Hero {
     private int skillCd1, skillCd2, skillCdU;
 
     public Swordsman() {
-        super(4000, 500, 700, 350, 100, 20, "Kael Solmere", "Swordsman", "Wooden Sword", "Blade Dance", "Blinding Silhouette", "Shattered Sun", 285, 345, 565, 1450, 1700, 725);
+        super(4000, 500, 700, 350, 100, 1, "Kael Solmere", "Swordsman", "Wooden Sword", "Blade Dance", "Blinding Silhouette", "Shattered Sun", 285, 345, 565, 1450, 1700, 725);
         this.skillCd1 = 5;
         this.skillCd2 = 8;
         this.skillCdU = 10;
@@ -72,6 +72,13 @@ public class Swordsman extends Hero {
          int damageDealt = damage - enemy.getDefense()/2;
 
         System.out.println(getSkill2() + " deals " + df.format(damageDealt) + " damage!");
+        
+         if (enemy.getStunned() > 0) {
+            System.out.println(enemy.getName() + " is already stunned! (Stun refreshed to 1 turn)");
+        } else {
+            System.out.println(enemy.getName() + " has been stunned! (Stun 1)");
+        }
+        enemy.setStun(1);
 
         enemy.setHp(enemy.getHp() - damageDealt);
     }
@@ -89,6 +96,13 @@ public class Swordsman extends Hero {
         int damageDealt = damage - enemy.getDefense()/2;
 
         System.out.println(getUltimate() + " deals " + df.format(damageDealt) + " damage!");
+        
+        if (enemy.getStunned() > 0) {
+            System.out.println(enemy.getName() + " is already stunned! (Stun refreshed to 2 turns)");
+        } else {
+            System.out.println(enemy.getName() + " has been blinded by the sun! (Stun 2)");
+        }
+        enemy.setStun(2);
 
         enemy.setHp(enemy.getHp() - damageDealt);
     }

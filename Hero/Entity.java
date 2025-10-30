@@ -6,6 +6,7 @@ public abstract class Entity {
     protected String name;
     protected int level;
     protected int hp;
+    protected int hpCap;
     protected int mana;
     protected int manaCap;
     protected int attack;
@@ -29,6 +30,10 @@ public abstract class Entity {
     protected int manaCostSkill2;
     protected int manaCostSkill3;
     protected int manaCostUltimate;
+
+    // === Battle Debuffs ===
+    protected int stunned = -1;
+    protected int disabled = -1;
 
     // === Constructors ===
     public Entity() {}
@@ -132,6 +137,18 @@ public abstract class Entity {
         return cooldownU; 
     }
 
+    public int getStunned() {
+        return stunned;
+    }
+
+    public int getHpCap() {
+        return hpCap;
+    }
+
+    public int getDisabled() {
+        return disabled;
+    }
+
     // === Setters ===
     public void setName(String name) { 
         this.name = name; 
@@ -211,5 +228,17 @@ public abstract class Entity {
 
     public void setCooldownU(int cooldownU) { 
         this.cooldownU = cooldownU; 
+    }
+
+    public void setStun(int stunned) {
+        this.stunned = stunned;
+    }
+
+    public void setHpCap(int hpCap) {
+        this.hpCap = hpCap;
+    }
+
+    public void setDisabled(int disabled) {
+        this.disabled = disabled;
     }
 }

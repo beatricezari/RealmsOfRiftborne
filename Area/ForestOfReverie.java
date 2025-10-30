@@ -18,6 +18,8 @@ public class ForestOfReverie {
     int currentArea = 0;
 
     public void enter(Hero hero) {
+        hero.setLevel(15); // for testing
+        hero.levelUp(101); // for testing
         System.out.println();
         System.out.println("┌────────────────────────────────────────────┐");
         System.out.println("│   You have entered the Forest of Reverie   │");
@@ -223,10 +225,6 @@ public class ForestOfReverie {
             char choice = scan.next().toLowerCase().charAt(0);
 
             if (choice == 'y') {
-                System.out.println();
-                System.out.println("┌────────────────────┐");
-                System.out.println("│       BATTLE       │");
-                System.out.println("└────────────────────┘");
                 explore = true;
                 retreat = false;
                 boolean heroWon = battle.fight(hero, new Elderthorn());

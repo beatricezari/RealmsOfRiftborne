@@ -18,6 +18,8 @@ public class ForsakenLands {
     int currentArea = 0;
 
     public void enter(Hero hero) {
+        hero.setLevel(59); // for testing
+        hero.levelUp(101); // for testing
         System.out.println();
         System.out.println("┌────────────────────────────────────────────┐");
         System.out.println("│        You have entered the Forsaken Lands │");

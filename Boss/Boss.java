@@ -19,6 +19,11 @@ public class Boss extends Entity {
     private int cooldownU = 0; 
     private int skillCd1, skillCd2, skillCd3, skillCdU;
     private int manaCap;
+    private int hpCap;
+    private int stunned = -1;
+    private boolean rebirth = false;
+    private boolean revive = false;
+    private int disabled = 0;
 
     public Boss(int hp, int attack, int mana, int defense, int speed, String name, String skill1, String skill2, String skill3, String ultimate, int manaCostSkill1, int manaCostSkill2, int manaCostSkill3, int manaCostUltimate){
         this.hp = hp;
@@ -184,8 +189,36 @@ public class Boss extends Entity {
         cooldownU = cdU;
     }
 
-    public void setManaCap(int manaCap){
+    public void setManaCap(int manaCap) {
         this.manaCap = manaCap;
+    }
+
+    public void setStun(int stunned) {
+        this.stunned = stunned;
+    }
+
+    public void setHpCap(int hpCap) {
+        this.hpCap = hpCap;
+    }
+
+    public void setRebirth(boolean rebirth) {
+        this.rebirth = rebirth;
+    }
+
+    public void setRevive(boolean revive) {
+        this.revive = revive;
+    }
+
+    public void setSkill3(String skill3) {
+        this.skill3 = skill3;
+    }
+
+    public void setSkill3Cd(int skillCd3) {
+        this.skillCd3 = skillCd3;
+    }
+
+    public void setDisabled(int disabled) {
+        this.disabled = disabled;
     }
 
     // Getters
@@ -261,7 +294,27 @@ public class Boss extends Entity {
         return cooldownU;
     }
 
-    public int getManaCap(){
+    public int getManaCap() {
         return manaCap;
+    }
+
+    public int getStunned() {
+        return stunned;
+    }
+
+    public int getHpCap() {
+        return hpCap;
+    }
+
+    public boolean getRebirth() {
+        return rebirth;
+    }
+
+    public boolean getRevive() {
+        return revive;
+    }
+
+    public int getDisabled() {
+        return disabled;
     }
 }

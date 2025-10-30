@@ -18,7 +18,8 @@ public class ReveriesEdge {
     int currentArea = 0;
     
     public void enter(Hero hero) {
-        hero.levelUp(101);
+        hero.setLevel(35); // for testing
+        hero.levelUp(101); // for testing
         System.out.println();
         System.out.println("┌────────────────────────────────────────────┐");
         System.out.println("│        You have entered Reverie's Edge     │");

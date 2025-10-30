@@ -22,6 +22,8 @@ public class Hero {
     private int skillCd1, skillCd2, skillCdU;
     private int manaCap;
     private int gold;
+    private int stunned = -1;
+    private int poisoned = 0;
 
     public Hero(){ 
 
@@ -252,6 +254,14 @@ public class Hero {
         return manaCap;
     }
 
+    public int getStunned() {
+        return stunned;
+    }
+
+    public int getPoison() {
+        return poisoned;
+    }
+
     // Setters
     public void setHp(int hp) {
         this.hp = hp;
@@ -307,6 +317,14 @@ public class Hero {
 
     public void setManaCap(int manaCap){
         this.manaCap = manaCap;
+    }
+
+    public void setStun(int stunned){
+        this.stunned = stunned;
+    }
+
+    public void setPoison(int poisoned) {
+        this.poisoned = poisoned;
     }
 
     // level mechanism
@@ -612,10 +630,10 @@ public class Hero {
 
     // Area Progress
     // Office Progress______________________________________________________________________________
-    private boolean canEnterArea1 = false;
-    private boolean canEnterArea2 = false;
-    private boolean canEnterArea3 = false;
-    private boolean haveEntered = false;
+    private boolean canEnterArea1 = true; // false original
+    private boolean canEnterArea2 = true;
+    private boolean canEnterArea3 = true;
+    private boolean haveEntered = true;
 
     public boolean haveEntered() {
         return haveEntered;

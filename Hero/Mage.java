@@ -6,7 +6,7 @@ public class Mage extends Hero {
     private int skillCd1, skillCd2, skillCdU;
 
     public Mage() {
-        super(4000, 550, 1000, 180, 90, 20, "Selene Arclight", "Mage", "Wooden Staff", "Stellar Shard", "Chains of Starlight", "Astral Cataclysm", 275, 545, 850, 2000, 2500, 570);
+        super(4000, 550, 1000, 180, 90, 1, "Selene Arclight", "Mage", "Wooden Staff", "Stellar Shard", "Chains of Starlight", "Astral Cataclysm", 275, 545, 850, 2000, 2500, 570);
         this.skillCd1 = 6;
         this.skillCd2 = 8;
         this.skillCdU = 12;
@@ -72,6 +72,13 @@ public class Mage extends Hero {
          int damageDealt = damage - enemy.getDefense()/2;
 
         System.out.println(getSkill2() + " deals " + df.format(damageDealt) + " damage!");
+
+        if (enemy.getStunned() > 0) {
+            System.out.println(enemy.getName() + " is already bound by celestial chains! (Stun refreshed to 2 turn)");
+        } else {
+            System.out.println(enemy.getName() + " has been immobilized by starlight! (Stun 2)");
+        }
+        enemy.setStun(2);
 
         enemy.setHp(enemy.getHp() - damageDealt);
     }
