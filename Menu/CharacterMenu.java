@@ -9,10 +9,10 @@ import java.util.Scanner;
 public class CharacterMenu extends Narration{
     Scanner scanner = new Scanner(System.in);
 
-    public Hero chooseCharacterMenu(){
+    public void chooseCharacterMenu(){
         MenuRelated designRelatedMenu = new MenuRelated();
-        InnerCharacterMenu innerCharacterMenuHandler = new InnerCharacterMenu();
         Characters characterPrompts = new Characters();
+        Menu mainMenuHandler = new Menu();
 
         while(true){
 
@@ -25,17 +25,20 @@ public class CharacterMenu extends Narration{
                 switch(characterChoice){
                     case 1:  
                         characterPrompts.swordsmanCharacter();
-                        hero = innerCharacterMenuHandler.playerSwordsman();
+                        hero =  new Swordsman();
+                        hero.setSwordmanCharacterChosen(true);
                         break;
 
                     case 2:
                         characterPrompts.gunnerCharacter();
-                        hero = innerCharacterMenuHandler.playerGunner();
+                        hero = new Gunner();
+                        hero.setGunnerCharacterChosen(true);
                         break;
 
                     case 3: 
                         characterPrompts.mageCharacter();
-                        hero = innerCharacterMenuHandler.playerMage();
+                        hero = new Mage();
+                        hero.setMageCharacterChosen(true);
                         break;
 
                     case 4:
@@ -50,11 +53,11 @@ public class CharacterMenu extends Narration{
                         continue;
                 }
 
-                if(hero == null) {
-                    continue;
+                if (hero != null) {
+                    mainMenuHandler.mainMenu(hero);
+                    break; 
                 }
 
-                return hero;
 
             } catch (NumberFormatException e) {
                 System.out.println();

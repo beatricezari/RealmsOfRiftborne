@@ -12,7 +12,6 @@ public class StartMenu extends Narration {
 
     public boolean displayStartMenu() {
         IntroTitle introDisplayHander = new IntroTitle();
-        //MainMenu menuHandler = new MainMenu();
         MenuRelated startMenuHandler = new MenuRelated();
         
 
@@ -21,7 +20,6 @@ public class StartMenu extends Narration {
         while (true) {
 
             startMenuHandler.startMenuRevised();
-            //startMenuHandler.trainingMenu();
             System.out.print("-->| ");
 
             try {

@@ -5,25 +5,22 @@ import Narration.*;
 import Area.*;
 import DesignRelated.*;
 
-import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Menu extends Narration {
 
     static Scanner scanner = new Scanner(System.in);
-    static DecimalFormat df = new DecimalFormat("0.00");
 
     public void mainMenu(Hero hero){
         AcademyMenu handler = new AcademyMenu();
         ForestOfReverie forest = new ForestOfReverie();
         ReveriesEdge reverieEdge = new ReveriesEdge();
         ForsakenLands forsakenLands = new ForsakenLands();
-        //AcademyMap mapHandler = new AcademyMap();
         IntroTitle exitHandler = new IntroTitle();
         ShopRelated shopPromptHandler = new ShopRelated();
         MenuRelated menuRelatedHandler = new MenuRelated();
         AreaRelated areaHandler = new AreaRelated();
-        Characters characterStatsHandler = new Characters();
+        InnerCharacterMenu innerCharacterMenuHandler = new InnerCharacterMenu();
 
 
         while(true){
@@ -189,21 +186,92 @@ public class Menu extends Narration {
 
                     case 7:
 
-                        if(hero.getSwordmanCharacterChosen()) {
-
-                            characterStatsHandler.swordsmanCharacterStats(hero);
+                        /*if(hero.getSwordmanCharacterChosen()) {
+                            innerCharacterMenuHandler.playerSwordsman();
+                            //characterStatsHandler.swordsmanCharacterStats(hero);
                             break;
                         } else if (hero.getGunnerCharacterChosen()) {
-
-                            characterStatsHandler.gunnerCharacterStats(hero);
+                            innerCharacterMenuHandler.playerGunner();
+                            //characterStatsHandler.gunnerCharacterStats(hero);
                             break;
                         } else if (hero.getMageCharacterChosen()) {
-
-                            characterStatsHandler.mageCharacterStats(hero);
+                            innerCharacterMenuHandler.playerMage();
+                            //characterStatsHandler.mageCharacterStats(hero);
                             break;
                         }
+                            */
                         
-                        
+                        /*if (hero.getSwordmanCharacterChosen()) {
+                            Hero result = innerCharacterMenuHandler.playerSwordsman();
+                            if (result == null) {
+                                CharacterMenu characterMenuHandler = new CharacterMenu();
+                                characterMenuHandler.chooseCharacterMenu();
+                                return; 
+                            } 
+
+                            break;
+                            
+                        } else if (hero.getGunnerCharacterChosen()) {
+                            Hero result = innerCharacterMenuHandler.playerGunner();
+                            if (result == null) {
+                                CharacterMenu characterMenuHandler = new CharacterMenu();
+                                characterMenuHandler.chooseCharacterMenu();
+                                return;
+                            }
+                            break;
+                        } else if (hero.getMageCharacterChosen()) {
+                            Hero result = innerCharacterMenuHandler.playerMage();
+                            if (result == null) {
+                                CharacterMenu characterMenuHandler = new CharacterMenu();
+                                characterMenuHandler.chooseCharacterMenu();
+                                return;
+                            }
+                            break;
+                        }
+                            */
+                            
+
+                         /*if (hero.getSwordmanCharacterChosen()) {
+                            Hero result = innerCharacterMenuHandler.playerSwordsman();
+                            if (result == null) {
+                                break;
+                            }
+                        } else if (hero.getGunnerCharacterChosen()) {
+                            Hero result = innerCharacterMenuHandler.playerGunner();
+                            if (result == null) {
+                                break;
+                            }
+                        } else if (hero.getMageCharacterChosen()) {
+                            Hero result = innerCharacterMenuHandler.playerMage();
+                            if (result == null) {
+                                break;
+                            }
+
+                        }
+                        */
+
+                        if (hero.getSwordmanCharacterChosen()) {
+                            Hero result = innerCharacterMenuHandler.playerSwordsman(hero);
+
+                            if (result == null) {
+                                break;
+                            }
+
+                        } else if (hero.getGunnerCharacterChosen()) {
+                            Hero result = innerCharacterMenuHandler.playerGunner(hero);
+
+                            if (result == null) {
+                                break;
+                            } 
+
+                        } else if (hero.getMageCharacterChosen()) {
+                            Hero result = innerCharacterMenuHandler.playerMage(hero);
+
+                            if (result == null) {
+                                break;
+                            } 
+                        }
+
 
                         // Part ni Ray haha
 

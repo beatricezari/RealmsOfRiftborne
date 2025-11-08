@@ -11,10 +11,10 @@ public class InnerCharacterMenu extends Narration{
     static Scanner scanner = new Scanner(System.in);
     
 
-    public Hero playerSwordsman() {
+    public Hero playerSwordsman(Hero hero) {
         MenuRelated menuRelatedHandler = new MenuRelated();
+        Characters characterStatsHandler = new Characters();
         boolean isValid = false;
-        Hero hero = null;
 
         while(!isValid) {
             menuRelatedHandler.swordsmanCharacterMenu();
@@ -28,7 +28,7 @@ public class InnerCharacterMenu extends Narration{
                         break;
 
                     case 2:
-                        swordsmanStats();
+                        characterStatsHandler.swordsmanCharacterStats(hero);
                         break;
 
                     case 3:
@@ -36,25 +36,56 @@ public class InnerCharacterMenu extends Narration{
                         break;
 
                     case 4:
-                        System.out.println();
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-                        System.out.println("      ┌───────────────────────────────────────────────────────────────────────────────────┐");
-                        System.out.println("      │   The winds whisper your choice... The path of the Swordsman is yours to walk.    │");
-                        System.out.println("      └───────────────────────────────────────────────────────────────────────────────────┘");
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-                        
+                        boolean willChange = true;
+                        scanner.nextLine(); 
 
-                        hero =  new Swordsman();
-                        hero.setSwordmanCharacterChosen(true);
-                        isValid = true;
+                        while (willChange) {
+                            System.out.println();
+                            System.out.println("┌─────────────────────────────────────────────────────────────────────────────┐");
+                            System.out.println("│  Are you sure you want to change character? All progress will not be saved. │");
+                            System.out.println("│  Enter 'y' to confirm or 'n' to cancel.                                    │");
+                            System.out.println("└─────────────────────────────────────────────────────────────────────────────┘");
+                            System.out.print("--> ");
+
+                            try {
+                                String willChangePlayer = scanner.nextLine().trim();
+
+                                if (willChangePlayer.equalsIgnoreCase("y")) {
+                                    System.out.println();
+                                    System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+                                    System.out.println("      ┌────────────────────────────────────────────────────────────────────┐");
+                                    System.out.println("      │   The fates allow you to choose again. Another destiny awaits...   │");
+                                    System.out.println("      └────────────────────────────────────────────────────────────────────┘");
+                                    System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+
+                                    CharacterMenu characterMenuHandler = new CharacterMenu();
+                                    characterMenuHandler.chooseCharacterMenu();
+                                    return new Swordsman();
+
+                                } else if (willChangePlayer.equalsIgnoreCase("n")) {
+                                    System.out.println();
+                                    System.out.println("Continuing with current character...");
+                                    willChange = false;
+                                } else {
+                                    System.out.println();
+                                    System.out.println("┌─────────────────────────────────────┐");
+                                    System.out.println("│  Invalid input. Please enter y/n.   │");
+                                    System.out.println("└─────────────────────────────────────┘");
+                                }
+
+                            } catch (Exception e) {
+                                System.out.println();
+                                System.out.println("┌──────────────────────────────────────────────┐");
+                                System.out.println("│   Invalid input detected. Please try again.  │");
+                                System.out.println("└──────────────────────────────────────────────┘");
+                                scanner.nextLine(); // clear buffer
+                            }
+                        }
                         break;
 
-                    case 5: 
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-                        System.out.println("      ┌────────────────────────────────────────────────────────────────────┐");
-                        System.out.println("      │   The fates allow you to choose again. Another destiny awaits...   │");
-                        System.out.println("      └────────────────────────────────────────────────────────────────────┘");
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+                    
+                    case 5:
+                        isValid = true;
                         return null;
 
                     default:
@@ -83,10 +114,10 @@ public class InnerCharacterMenu extends Narration{
         
     }
 
-    public Hero playerGunner() {
+    public Hero playerGunner(Hero hero) {
         MenuRelated menuRelatedHandler = new MenuRelated();
+        Characters characterStatsHandler = new Characters();
         boolean isValid = false;
-        Hero hero = null;
 
         while(!isValid) {
             menuRelatedHandler.gunnerCharacterMenu();
@@ -100,7 +131,8 @@ public class InnerCharacterMenu extends Narration{
                         break;
 
                     case 2:
-                        gunnerStats();
+                        characterStatsHandler.gunnerCharacterStats(hero);
+                        
                         break;
 
                     case 3:
@@ -108,24 +140,56 @@ public class InnerCharacterMenu extends Narration{
                         break;
 
                     case 4:
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-                        System.out.println("      ┌────────────────────────────────────────────────────────────────────────────────┐");
-                        System.out.println("      │   The echo of gunfire resounds through the void - you are the chosen Gunner.   │");
-                        System.out.println("      └────────────────────────────────────────────────────────────────────────────────┘");
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+                        boolean willChange = true;
+                        scanner.nextLine(); 
 
-                        hero = new Gunner();
-                        hero.setGunnerCharacterChosen(true);
-                        isValid = true;
+                        while (willChange) {
+                            System.out.println();
+                            System.out.println("┌─────────────────────────────────────────────────────────────────────────────┐");
+                            System.out.println("│  Are you sure you want to change character? All progress will not be saved. │");
+                            System.out.println("│  Enter 'y' to confirm or 'n' to cancel.                                    │");
+                            System.out.println("└─────────────────────────────────────────────────────────────────────────────┘");
+                            System.out.print("--> ");
+
+                            try {
+                                String willChangePlayer = scanner.nextLine().trim();
+
+                                if (willChangePlayer.equalsIgnoreCase("y")) {
+                                    System.out.println();
+                                    System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+                                    System.out.println("      ┌────────────────────────────────────────────────────────────────┐");
+                                    System.out.println("      │   The visions shift... perhaps another path calls your name.   │");
+                                    System.out.println("      └────────────────────────────────────────────────────────────────┘");
+                                    System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+
+                                    CharacterMenu characterMenuHandler = new CharacterMenu();
+                                    characterMenuHandler.chooseCharacterMenu();
+                                    return new Gunner();
+
+                                } else if (willChangePlayer.equalsIgnoreCase("n")) {
+                                    System.out.println();
+                                    System.out.println("Continuing with current character...");
+                                    willChange = false;
+                                } else {
+                                    System.out.println();
+                                    System.out.println("┌─────────────────────────────────────┐");
+                                    System.out.println("│  Invalid input. Please enter y/n.   │");
+                                    System.out.println("└─────────────────────────────────────┘");
+                                }
+
+                            } catch (Exception e) {
+                                System.out.println();
+                                System.out.println("┌──────────────────────────────────────────────┐");
+                                System.out.println("│   Invalid input detected. Please try again.  │");
+                                System.out.println("└──────────────────────────────────────────────┘");
+                                scanner.nextLine(); 
+                            }
+                        }
                         break;
 
+                    
                     case 5: 
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-                        System.out.println("      ┌────────────────────────────────────────────────────────────────┐");
-                        System.out.println("      │   The visions shift... perhaps another path calls your name.   │");
-                        System.out.println("      └────────────────────────────────────────────────────────────────┘");
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-
+                        isValid = true;
                         return null;
 
                     default:
@@ -154,10 +218,11 @@ public class InnerCharacterMenu extends Narration{
         
     }
 
-    public Hero playerMage() {
+    public Hero playerMage(Hero hero) {
         MenuRelated menuRelatedHandler = new MenuRelated();
+        Characters characterStatsHandler = new Characters();
         boolean isValid = false;
-        Hero hero = null;
+        //hero = null;
 
         while(!isValid) {
             menuRelatedHandler.mageCharacterMenu();
@@ -171,7 +236,7 @@ public class InnerCharacterMenu extends Narration{
                         break;
 
                     case 2:
-                        mageStats();
+                        characterStatsHandler.mageCharacterStats(hero);
                         break;
 
                     case 3:
@@ -179,24 +244,58 @@ public class InnerCharacterMenu extends Narration{
                         break;
 
                     case 4:
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-                        System.out.println("      ┌──────────────────────────────────────────────────────────────────────────────────┐");
-                        System.out.println("      │   The stars align as the arcane accepts you. You are now the Mage of destiny.    │");
-                        System.out.println("      └──────────────────────────────────────────────────────────────────────────────────┘");
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+                        boolean willChange = true;
+                        scanner.nextLine(); 
 
-                        hero = new Mage();
-                        hero.setMageCharacterChosen(true);
-                        isValid = true;
+                        while (willChange) {
+                            System.out.println();
+                            System.out.println("┌─────────────────────────────────────────────────────────────────────────────┐");
+                            System.out.println("│  Are you sure you want to change character? All progress will not be saved. │");
+                            System.out.println("│  Enter 'y' to confirm or 'n' to cancel.                                     │");
+                            System.out.println("└─────────────────────────────────────────────────────────────────────────────┘");
+                            System.out.print("--> ");
+
+                            try {
+                                String willChangePlayer = scanner.nextLine().trim();
+
+                                if (willChangePlayer.equalsIgnoreCase("y")) {
+                                    System.out.println();
+                                    System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+                                    System.out.println("      ┌───────────────────────────────────────────────────────────────────────────┐");
+                                    System.out.println("      │   The scrolls fade from your grasp -  you seek another legend to become.  │");
+                                    System.out.println("      └───────────────────────────────────────────────────────────────────────────┘");
+                                    System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+
+                                    CharacterMenu characterMenuHandler = new CharacterMenu();
+                                    characterMenuHandler.chooseCharacterMenu();
+                                    return new Mage();
+                                } 
+                                else if (willChangePlayer.equalsIgnoreCase("n")) {
+                                    System.out.println();
+                                    System.out.println("Continuing with current character...");
+                                    willChange = false;
+                                } 
+                                else {
+                                    System.out.println();
+                                    System.out.println("┌─────────────────────────────────────┐");
+                                    System.out.println("│  Invalid input. Please enter y/n.   │");
+                                    System.out.println("└─────────────────────────────────────┘");
+                                }
+
+                            } catch (Exception e) {
+                                System.out.println();
+                                System.out.println("┌──────────────────────────────────────────────┐");
+                                System.out.println("│   Invalid input detected. Please try again.  │");
+                                System.out.println("└──────────────────────────────────────────────┘");
+                                scanner.nextLine(); 
+                            }
+                        }
                         break;
 
-                    case 5: 
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-                        System.out.println("      ┌───────────────────────────────────────────────────────────────────────────┐");
-                        System.out.println("      │   The scrolls fade from your grasp — you seek another legend to become.   │");
-                        System.out.println("      └───────────────────────────────────────────────────────────────────────────┘");
-                        System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-
+                         
+                    
+                    case 5:
+                        isValid = true;
                         return null;
 
                     default:

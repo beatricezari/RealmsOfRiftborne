@@ -1,6 +1,7 @@
 package TrainingGround;
 
 import Hero.*;
+import DesignRelated.*;
 import java.util.Random;
 
 public class StatProgress {
@@ -47,9 +48,6 @@ public class StatProgress {
     }
 
     public void checkHpValidation(Hero hero){
-        /*int level = hero.getLevel();
-        hero.setLevel(level);
-        */
 
         if(!hero.canEnterArea1()){
             if(hero.hasFinishedAllTraining()){
@@ -91,17 +89,9 @@ public class StatProgress {
     }
 
     public void currencyProgress(Hero hero) {
+        Stats statsHandler = new Stats();
 
-        int gold = 2500;
-
-        System.out.println("┌───────────────────────────────────────────────────┐");
-        System.out.println("│    Here's a sack of gold for you. May it help     │");
-        System.out.println("│    face the challenges that await on your path.   │");
-        System.out.println("└───────────────────────────────────────────────────┘");
-        System.out.printf(">>> %-15s : +%6d%n", "Gold Earned", gold);
-        System.out.printf(">>> %-15s : %6d%n", "Total Gold", hero.getGold() + gold);
-
-        hero.setGold(hero.getGold() + gold);
+        statsHandler.sackOfGold(hero);
 
     }
 

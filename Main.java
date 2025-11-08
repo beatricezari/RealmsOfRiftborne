@@ -1,9 +1,9 @@
 import Menu.*;
-import Hero.*;
+//import Hero.*;
 
 public class Main {
     public static void main(String[] args) {
-        Menu mainMenu = new Menu();
+        //Menu mainMenu = new Menu();
         StartMenu startMenu = new StartMenu();
         CharacterMenu characterMenu = new CharacterMenu();
         
@@ -13,9 +13,9 @@ public class Main {
             return;
         }
 
-        Hero hero =  characterMenu.chooseCharacterMenu();
+        characterMenu.chooseCharacterMenu();
 
-        mainMenu.mainMenu(hero);
+        //mainMenu.mainMenu(hero);
 
     }
 }
