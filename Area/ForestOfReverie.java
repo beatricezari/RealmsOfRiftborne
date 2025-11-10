@@ -3,6 +3,7 @@ import BattleMechanics.*;
 import Boss.*;
 import Hero.*;
 import Mobs.*;
+import Narration.*; // Javines | Plot
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -11,7 +12,8 @@ public class ForestOfReverie {
     static Scanner scan = new Scanner(System.in);
     DecimalFormat df = new DecimalFormat("#,##0");
     MobBattleMechanic mobBattle = new MobBattleMechanic();
-    EliteBattleMechanic eliteBattle = new EliteBattleMechanic();    
+    EliteBattleMechanic eliteBattle = new EliteBattleMechanic();   
+    MagePlot magePlotHandler = new MagePlot(); // Javines | Plot 
     boolean retreat = false;
     boolean explore = true;
     boolean exit = false;
@@ -276,6 +278,7 @@ public class ForestOfReverie {
                 if(BattleMechanic.run) {
                     BattleMechanic.run = false;
                 } else if (heroWon) {
+
                     goldGained = (int) Math.round(2500 * rand.nextDouble(1.50, 1.60)); // random multiplier 1.50 - 1.59
                     expGained = (int) Math.round(450 * rand.nextDouble(1.20, 1.30)); // random multiplier 1.20 - 1.29
                     //temp design for drop
@@ -293,8 +296,14 @@ public class ForestOfReverie {
                     hero.levelUp(expGained);
                     System.out.println("You have slain the enemy that guards the forest, every living being within the forest now fears you.");
                     System.out.println();
+
+                    if(hero.getMageCharacterChosen() && hero.getHaveDefeatedArea1Boss()) { // Javines | Plot
+                        magePlotHandler.mageAfterArea1();
+                    }
+
                     System.out.println("You peacefully exit the Forest Of Reverie...");
                     System.out.println();
+
                     currentArea = 0; // automatically exits the FOREST OF REVERIE
                     exit = true;
                     break;

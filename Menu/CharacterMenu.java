@@ -13,6 +13,7 @@ public class CharacterMenu extends Narration{
         MenuRelated designRelatedMenu = new MenuRelated();
         Characters characterPrompts = new Characters();
         Menu mainMenuHandler = new Menu();
+        Hero hero = null;
 
         while(true){
 
@@ -20,7 +21,7 @@ public class CharacterMenu extends Narration{
 
             try {
                 int characterChoice = scanner.nextInt(); 
-                Hero hero = null;
+                hero = null;
 
                 switch(characterChoice){
                     case 1:  
@@ -72,5 +73,8 @@ public class CharacterMenu extends Narration{
                 scanner.nextLine(); 
             }
         }
+
+        return hero;
     }
 }
+    

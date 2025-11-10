@@ -14,6 +14,8 @@ public class Swordsman extends Hero {
         this.skillCd1 = 5;
         this.skillCd2 = 8;
         this.skillCdU = 10;
+
+        setSwordmanCharacterChosen(true); // Javines | plot
     }
     
     DecimalFormat df = new DecimalFormat("#,##0");

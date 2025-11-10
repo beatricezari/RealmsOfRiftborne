@@ -632,7 +632,7 @@ public class Hero {
     // Office Progress______________________________________________________________________________
     private boolean canEnterArea1 = true; // false original
     private boolean canEnterArea2 = true;
-    private boolean canEnterArea3 = true;
+    private boolean canEnterArea3 = false;
     private boolean haveEntered = true;
 
     public boolean haveEntered() {
@@ -671,6 +671,7 @@ public class Hero {
 
     private boolean haveDefeatedArea1Boss = true; // default for checking
     private boolean haveDefeatedArea2Boss = true; // default for checking
+    private boolean haveDefeatedArea3Boss = true; // default for checking
 
     public void setHaveDefeatedArea1Boss(boolean haveDefeatedArea1Boss) {
         this.haveDefeatedArea1Boss = haveDefeatedArea1Boss;
@@ -687,6 +688,15 @@ public class Hero {
     public boolean getHaveDefeatedArea2Boss () {
         return haveDefeatedArea2Boss;
     }
+
+    public void setHaveDefeatedArea3Boss(boolean haveDefeatedArea3Boss) { // still in progress
+        this.haveDefeatedArea3Boss = haveDefeatedArea3Boss;
+    }
+
+    public boolean getHaveDefeatedArea3Boss() { // still in progress
+        return haveDefeatedArea3Boss;
+    }
+    
 
     // Training progress_______________________________________________________________________________
     private boolean finishedEndurance = false;
@@ -802,5 +812,95 @@ public class Hero {
     public boolean getMageCharacterChosen() {
         return mageCharacterChosen;
     }
+
+    public void resetCharacterFlags() { // not implemented
+        this.setSwordmanCharacterChosen(false);
+        this.setMageCharacterChosen(false);
+        this.setGunnerCharacterChosen(false);
+    }
+
+    //Reset________________________________________________________________________________________________________________________
+
+    public void resetAllProgress() {
+    // Reset stats
+    this.hp = this.baseHp;
+    this.attack = this.baseAtk;
+    this.mana = this.baseMana;
+    this.defense = this.baseDef;
+    this.speed = 0;
+    this.level = 1;
+    this.experience = 0;
+    this.gold = 0;
+
+    // Reset weapon and skills
+    this.weapon = null;
+    this.skill1 = null;
+    this.skill2 = null;
+    this.ultimate = null;
+    this.manaCostSkill1 = 0;
+    this.manaCostSkill2 = 0;
+    this.manaCostUltimate = 0;
+    this.cooldown1 = 0;
+    this.cooldown2 = 0;
+    this.cooldownU = 0;
+
+    // Reset status effects
+    this.stunned = -1;
+    this.poisoned = 0;
+
+    // Reset base and max stats
+    this.maxHp = 22000;
+    this.maxAtk = 0;
+    this.maxMana = 0;
+    this.maxDef = 0;
+
+    // Reset start/menu progress
+    this.hasVisitedPrologue = false;
+    this.hasVisitedShop = false;
+    this.hasOpenedInventory = false;
+    this.hasVisitedAcademy = false;
+    this.hasVisitedArea1 = false;
+    this.hasVisitedArea2 = false;
+    this.hasVisitedArea3 = false;
+
+    // Reset academy progress
+    this.hasVisitedGym = false;
+    this.hasVisitedLibrary = false;
+    this.hasVisitedOffice = false;
+
+    // Reset library quests
+    this.libraryQuest1Done = false;
+    this.libraryQuest2Done = false;
+    this.riddle1Done = false;
+    this.riddle2Done = false;
+    this.riddle3Done = false;
+
+    // Reset area progress
+    this.canEnterArea1 = true;
+    this.canEnterArea2 = false;
+    this.canEnterArea3 = false;
+    this.haveEntered = false;
+    this.haveDefeatedArea1Boss = true;
+    this.haveDefeatedArea2Boss = false;
+    this.haveDefeatedArea3Boss = false;
+
+    // Reset training progress
+    this.finishedEndurance = false;
+    this.finishedStrength = false;
+    this.finishedDurability = false;
+    this.finishedManaRefinement = false;
+    this.numberOfTrainingFinished = 0;
+    this.finishedAllTraining = true;
+    this.haveExploredButExited = false;
+    this.haveAcceptedButExited = false;
+
+    // Reset shop interactions
+    this.hasConversedWithShop = false;
+
+    // Reset character choice flags
+    resetCharacterFlags();
+}
+
+
  
 }

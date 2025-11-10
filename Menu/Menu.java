@@ -20,6 +20,7 @@ public class Menu extends Narration {
         ShopRelated shopPromptHandler = new ShopRelated();
         MenuRelated menuRelatedHandler = new MenuRelated();
         AreaRelated areaHandler = new AreaRelated();
+        MagePlot magePlotHandler = new MagePlot();
         InnerCharacterMenu innerCharacterMenuHandler = new InnerCharacterMenu();
 
 
@@ -53,6 +54,13 @@ public class Menu extends Narration {
                             hero.setHasVisitedAcademy(true);
                         } 
 
+                        if(hero.getHaveDefeatedArea3Boss()) {
+
+                            if(hero.getMageCharacterChosen()) {
+                                magePlotHandler.mageEndingPlot();
+                            }
+
+                        }
                         
 
                         handler.academyMapMenu(hero);
@@ -154,11 +162,8 @@ public class Menu extends Narration {
 
                     case 6:
                         if (hero.canEnterArea3()) {
-                            System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-                            System.out.println("     ┌───────────────────────────────────────────────┐");
-                            System.out.println("     │   + You may now enter The Forsaken Lands +    │");
-                            System.out.println("     └───────────────────────────────────────────────┘");
-                            System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+
+                            areaHandler.forsakenLandsEligible();
 
                             if (!hero.hasVisitedArea3()) {
                                 area3Narration();
@@ -173,82 +178,14 @@ public class Menu extends Narration {
                             forsakenLands.enter(hero);
 
                         } else {
-                            System.out.println();
-                            System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-                            System.out.println("     ┌──────────────────────────────────────────────────────────────┐");
-                            System.out.println("     │       You are not eligible to enter The Forsaken Lands       │");
-                            System.out.println("     │       Visit the Principal's Office to unlock this area       │");
-                            System.out.println("     └──────────────────────────────────────────────────────────────┘");
-                            System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
+
+                            areaHandler.forsakenLandsNotEligible();
+            
                         }
 
                         break;
 
                     case 7:
-
-                        /*if(hero.getSwordmanCharacterChosen()) {
-                            innerCharacterMenuHandler.playerSwordsman();
-                            //characterStatsHandler.swordsmanCharacterStats(hero);
-                            break;
-                        } else if (hero.getGunnerCharacterChosen()) {
-                            innerCharacterMenuHandler.playerGunner();
-                            //characterStatsHandler.gunnerCharacterStats(hero);
-                            break;
-                        } else if (hero.getMageCharacterChosen()) {
-                            innerCharacterMenuHandler.playerMage();
-                            //characterStatsHandler.mageCharacterStats(hero);
-                            break;
-                        }
-                            */
-                        
-                        /*if (hero.getSwordmanCharacterChosen()) {
-                            Hero result = innerCharacterMenuHandler.playerSwordsman();
-                            if (result == null) {
-                                CharacterMenu characterMenuHandler = new CharacterMenu();
-                                characterMenuHandler.chooseCharacterMenu();
-                                return; 
-                            } 
-
-                            break;
-                            
-                        } else if (hero.getGunnerCharacterChosen()) {
-                            Hero result = innerCharacterMenuHandler.playerGunner();
-                            if (result == null) {
-                                CharacterMenu characterMenuHandler = new CharacterMenu();
-                                characterMenuHandler.chooseCharacterMenu();
-                                return;
-                            }
-                            break;
-                        } else if (hero.getMageCharacterChosen()) {
-                            Hero result = innerCharacterMenuHandler.playerMage();
-                            if (result == null) {
-                                CharacterMenu characterMenuHandler = new CharacterMenu();
-                                characterMenuHandler.chooseCharacterMenu();
-                                return;
-                            }
-                            break;
-                        }
-                            */
-                            
-
-                         /*if (hero.getSwordmanCharacterChosen()) {
-                            Hero result = innerCharacterMenuHandler.playerSwordsman();
-                            if (result == null) {
-                                break;
-                            }
-                        } else if (hero.getGunnerCharacterChosen()) {
-                            Hero result = innerCharacterMenuHandler.playerGunner();
-                            if (result == null) {
-                                break;
-                            }
-                        } else if (hero.getMageCharacterChosen()) {
-                            Hero result = innerCharacterMenuHandler.playerMage();
-                            if (result == null) {
-                                break;
-                            }
-
-                        }
-                        */
 
                         if (hero.getSwordmanCharacterChosen()) {
                             Hero result = innerCharacterMenuHandler.playerSwordsman(hero);
@@ -271,9 +208,6 @@ public class Menu extends Narration {
                                 break;
                             } 
                         }
-
-
-                        // Part ni Ray haha
 
                         break;
                         

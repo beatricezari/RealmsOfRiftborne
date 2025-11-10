@@ -33,7 +33,7 @@ public class StartMenu extends Narration {
                             prologueNarration();
                             hasVisitedPrologue = true;
                         }
-
+                        
                         return true;
 
                     case 2:

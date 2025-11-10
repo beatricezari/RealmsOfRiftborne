@@ -81,14 +81,43 @@ public class IntroTitle {
         System.out.println("░░░▓▒▒░░░▓▒▒░░░           *                                                     .                     *    ░░░▓▒▒░░░▒▒▓░░░");
         System.out.println("   ░░░░░░░░░                                            .                                                     ░░░░░░░░░");
         System.out.println("      ░░░    *          .              .                       *                       .              .          ░░░");
-        
-        /*System.out.println("┌──────────────────────────────┐");
-        System.out.println("│   Press ENTER to continue    │");
-        System.out.println("└──────────────────────────────┘");
-        scanner.nextLine();
-        */
-        
 
+    }
+
+    public void outroGameDoneTemporary() {
+        System.out.println();
+        System.out.println("                           ░ ░ ░ ░ ░ ░ ░              M Y S T V A L E   A C A D E M Y     ▓▓▓▓▓▓         ");
+        System.out.println("                           ░░░░░░░░░░░░░                                                          ▓▓▓  ");
+        System.out.println("       ▓▓▓      ▓▓▓▓▓▓      ░░░░░▒▒▒▒▒▒    A  T E X T  B A S E D - G A M E  A D V E N T U R E     ▓▓▓      ");
+        System.out.println("                   ▓▓▓▓▓▓   ░░░░░▒▒▓▒▓▒                   I N  A  W O R L D  O F               ▓▓▓      ");
+        System.out.println("             ▒        ▓▓▓▓▓ ░░░░░▒▒▓▒▓▒     S O R C E R Y  A N D  S H A D O W E D  H A L L S         ▓▓▓▓▓▓");
+        System.out.println(" ▓▓▓         ▒           ▓▓ ░░░░░▒▒▒▒▒▒                                                            ▓▓▓       ");
+        System.out.println(" ▓▓▓▓▓▓    ░░▒▒▒           ░░░░░░░░░░░░░   M A Y  T H E  O D D S  B E  I N   Y O U R  F A V O R              ");
+        System.out.println("    ▓▓▓   ░░░▒▒▒▒           ░░░░░▒▒▒▒▒▒                                                                        ");
+        System.out.println("  ░    ▓▓ ░░░▒▓▓▒           ░░░░░▒▒▓▒▓▒                                               ▓▓▓▓▓▓     ");
+        System.out.println("░░░▒▒    ░░░░▒▒▒▒▒  ▒ ▒ ▒ ▒ ░░░░░▒▒▒▒▒▒                          ▓▓▓   ");
+        System.out.println("░░░▒▒▒    ░░░▒▒▒▒   ▒▒▒▒▒▒▒▒░░░░░▒▒▓▒▓▒      ▓▓▓▓▓▓           ▓▓▓");
+        System.out.println("░░░▒▒     ░░░▒▒▒▒   ▒▒▒▒▒▒▒▒░░░░░▒▒▒▒▒▒            ▓▓▓     ░   ░▒    ▒ ");
+        System.out.println("░░░▒▒▒▒▒▒▒░░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░░░░░    ░ ░ ░  ▓▓▓     ░░░░░▒▒▒▒▒▒ ");
+        System.out.println("                            ░░░░░▒▒▒▒▒▒     ░░░░░     ▓▓▓  ░░░░░▒▒▓▒▓▒");
+        System.out.println("░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░ ░░░░░▒▒▓▒▓▒     ░░░░░          ░░░░░▒▒▒▒▒▒");
+        System.out.println("░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▒▒▒▒▒░░░░░░░░░░          ░░░░░▒▒▓▒▓▒");
+        System.out.println("▒▓▒▒▒▓▒▒▒▓▒▒▒▓▒▒▒▓▒▒▒▓▒▒▒▓▒▒░░░░░▒▒▓▒▓▒     ░░░░░          ░░░░░▒▒▒▒▒▒");
+        System.out.println("▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒▒▒▒ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+        System.out.println("         ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+        System.out.println("░ ░░ ▒ ▒ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░▒▒▒▒▒▒ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒");
+        System.out.println("░░░▒▒▒▒▒                    ░░░░░▒▒▒▒▒▒ ▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░▒▒▒▒▒▒▒");
+        System.out.println("░░░▒▓▒▓▒░ ░ ░▒ ▒ ▒░░░░░░░░░ ░░░░░▒▒▒▒▒▒ ▒▒▒▒░░▒▒▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▒▒▒");
+        System.out.println("░░░▒▒▒▒▒░░░░░▒▒▒▒▒░░░░░░░░░ ░░░░░▒▒▒▒▒▒ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░");
+        System.out.println("   *    ░░░░░▒▒▒▒▒░░░░░░░░░ ░░░░░▒▒▒▒▒▒ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒");
+        System.out.println("        .         ░░░░░░░░░ ░░░░░▒▒▒▒▒▒ ▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒░░░░░░░░░▒▒▒▒▒");
+        System.out.println(" .   ▓▒▒   ▓▒▒▒▓   ▓▒▒▒   ▓▒▒   ▓▒▓▒▒   ▒▒▒▓                     *               ");
+        System.out.println("    ▒▒▒▒▓ ▒▒▒▒▓▒▒ ▓▒▒▒▓▒ ▒▒▓▒▒ ▓▒▒▒▒▒▒ ▓▒▒▓▒▒     .      *              .   ");
+        System.out.println("   .  ░      ░      ░░  .  ░      ░      ░░                   .              ");
+        System.out.println("     *  ▒▒▒  *  ▒▓ .      *  ▒▒▒  .  ▒▓         .                       *     ");
+        System.out.println(" ▒▒▓   ▓▒▒▒▒   ▒▒▒▓   ▓▒▒   ▓▒▒▒▒   ▒▒▒▓   *            .           .          ");
+        System.out.println("▓▒▒▒▒ ▒▒▓▒▒▒▓ ▓▒▒▒▒▒ ▒▒▓▒▒ ▒▒▓▒▒▒▓ ▒▒▒▒▒▓                                   ");
+        System.out.println("  ░      ░      ░░     ░      ░      ░░         .           *         *    .    ");
     }
 
     public void exitingTheGame() {
@@ -226,6 +255,43 @@ public class IntroTitle {
         
 
     }
+
+    /*public void outroGameDone() {
+        // to be implemented
+
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+        System.out.println("");
+
+    }
+        */
 
 
 }

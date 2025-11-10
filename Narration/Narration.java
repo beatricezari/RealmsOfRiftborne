@@ -56,11 +56,11 @@ public class Narration{
             
             "She gestures toward the campus...",
             
-            "\"The Library, a hall of ancient knowledge...\"",
+            "\"The Library, a hall of ancient knowledge...\nYou can increase your stats by accepting quests. Be aware that those quests are limited.\"",
             
-            "\"Canteen, though filled with chatter...\"",
-            
-            "\"The Training Ground, where strength is forged...\"",
+            "\"The Training Ground, where strength is forged...\nOnce you finish training, you will be granted an eligibility pass through the Principal's Office.\"",
+
+            "\"In every area outside the academy, you need an eligibility pass. So, you must go through the Principal's office first.\"",
             
             "\"And finally\" the Louraine's form stills...",
             
@@ -89,22 +89,6 @@ public class Narration{
 
         // Array Iteration
         playSection(library);
-    }
-
-    // Canteen Narration | Not used
-    public static void canteenNarration() {
-        String[] canteen = {
-            "The canteen hums with the chatter of students...",
-            
-            "The wandering spirit, Louraine, appears at your side.",
-            
-            "\"This is no ordinary canteen...\"",
-            
-            "The spirit fades, and the scent of food and metal lingers in the air."
-        };
-
-        // Array Iteration
-        playSection(canteen);
     }
 
     // Gym Narration
@@ -243,11 +227,25 @@ public class Narration{
         System.out.println("│ Personality: Intense, Brooding, Fiercely Loyal             │");
         System.out.println("│ Grade Level: First Year                                    │");
         System.out.println("│ Fun Facts:                                                 │");
-        System.out.println("│   - Siblings with Aria Caelith                             │");
         System.out.println("│   - Talks to his shadow when thinking                      │");
         System.out.println("│   - Collects old maps and mysterious relics                │");
         System.out.println("│   - Can\'t resist chocolate during stressful situations     │");
         System.out.println("│   - Has a soft spot for stray animals                      │");
+        System.out.println("│                                                            │");
+        System.out.println("│ Skill Details:                                             │");
+        System.out.println("│   Basic Attack                                             │");
+        System.out.println("│    - A precise sword strike that restores mana             │");
+        System.out.println("│                                                            │");
+        System.out.println("│   Blade Dance                                              │");
+        System.out.println("│    - A swift combo of slashes that deals increased damage  │");
+        System.out.println("│                                                            │");
+        System.out.println("│   Blinding Silhouette                                      │");
+        System.out.println("│    - A fast strike that stuns the enemy for 1 turn         │");
+        System.out.println("│      or refreshes the stun                                 │");
+        System.out.println("│                                                            │");
+        System.out.println("│   Shattered Sun                                            │");
+        System.out.println("│    - A powerful finishing blow that stuns the enemy        │");
+        System.out.println("│      for 2 turns or refreshes the stun                     │");
         System.out.println("└────────────────────────────────────────────────────────────┘");
         System.out.println("┌──────────────────────────────┐");
         System.out.println("│   Press ENTER to continue    │");
@@ -263,7 +261,7 @@ public class Narration{
         System.out.println("│      Kael Solmere - The Blade of Dawn     │");
         System.out.println("│               Combat Overview             │");
         System.out.println("│-------------------------------------------│");
-        System.out.println("│  Swordsman (MAX LVL: 60)                  │");
+        System.out.println("│  Swordsman (Max Level: 60)                │");
         System.out.println("│  Basic Attack                             │");
         System.out.println("│  Skill 1 - Blade Dance                    │");
         System.out.println("│  Skill 2 - Blinding Silhouette            │");
@@ -343,21 +341,27 @@ public class Narration{
         System.out.println("│  SPD (Speed):         200                 │");
         System.out.println("└───────────────────────────────────────────┘");
 
-        System.out.println("┌───────────────────────────────────────────────────────────────────────────────┐");
-        System.out.println("│                                  Backstory                                    │");
-        System.out.println("├───────────────────────────────────────────────────────────────────────────────┤");
-        System.out.println("│ Kael Solmere was born into a family burdened with a dark legacy. The Solmeres │");
-        System.out.println("│ were once the guardians of the Kim Morvain, a forbidden artifact of immense   │");
-        System.out.println("│ power. Centuries ago, a treacherous betrayal shattered the family, scattering │");
-        System.out.println("│ its members and leaving a lingering curse upon their bloodline.               │");
-        System.out.println("│                                                                               │");
-        System.out.println("│ Now, Kael and his sister Aria are the last heirs. Their path is not only about│");
-        System.out.println("│ mastering their extraordinary abilities but also unraveling the secrets       │");
-        System.out.println("│ haunting their family. Bound by loyalty and shared struggle, the siblings     │");
-        System.out.println("│ rely on each other to survive trials, uncover hidden truths, and confront the │");
-        System.out.println("│ forces behind the Kim Morvain. Every step they take brings them closer to     │");
-        System.out.println("│ breaking the curse—if they can withstand the shadows of their bloodline.      │");
-        System.out.println("└───────────────────────────────────────────────────────────────────────────────┘");
+        System.out.println(" ┌──────────────────────────────────────────────────────────────────────────┐");
+        System.out.println(" │                                Backstory                                 │");
+        System.out.println(" ├──────────────────────────────────────────────────────────────────────────┤");
+        System.out.println(" │  Kael Solmere was born into a family burdened by an ancient curse.       │");
+        System.out.println(" │  Once revered as protectors of balance between realms, the Solmeres      │");
+        System.out.println(" │  fell into ruin after a betrayal committed by their own kin.             │");
+        System.out.println(" │  That act unleashed the 'Curse of the Severed Oath'—a shadow that feeds  │");
+        System.out.println(" │  upon their lineage, marking each descendant with echoes of guilt and    │");
+        System.out.println(" │  pain from sins they do not yet understand.                              │");
+        System.out.println(" │                                                                          │");
+        System.out.println(" │  Now, Kael stands as the last heir of Solmere, struggling not only       │");
+        System.out.println(" │  against the curse consuming his soul, but also to uncover the truth     │");
+        System.out.println(" │  of his family's downfall. His journey will test his will, awaken        │");
+        System.out.println(" │  long-forgotten powers within his blood, and reveal secrets buried       │");
+        System.out.println(" │  deep in the shadows of history.                                         │");
+        System.out.println(" │                                                                          │");
+        System.out.println(" │  As he seeks redemption, Kael comes to believe his kin are prisoners     │");
+        System.out.println(" │  of the dark entity known as Kim Morvain. But the deeper he delves, the  │");
+        System.out.println(" │  closer he comes to a truth more haunting—and what could that be?        │");
+        System.out.println(" └──────────────────────────────────────────────────────────────────────────┘");
+
 
 
 }
@@ -374,13 +378,26 @@ public class Narration{
         System.out.println("│ Personality: Quick-Witted, Resourceful, Fiercely Protective of Kael            │");
         System.out.println("│ Grade Level: First Year Student                                                │");
         System.out.println("│ Fun Facts:                                                                     │");
-        System.out.println("│   - Siblings with Kael Solmere                                                 │");
         System.out.println("│   - Skilled gunner and inventor                                                │");
         System.out.println("│   - Always carries a small notebook for invention ideas                        │");
         System.out.println("│   - Loves collecting rare crystals and gemstones                               │");
         System.out.println("│   - Has a habit of whistling when nervous                                      │");
         System.out.println("│   - Can memorize complex mechanisms after seeing them once                     │");
         System.out.println("│   - Prefers fast-paced games over slow strategy games                          │");
+        System.out.println("│                                                                                │");
+        System.out.println("│ Skill Details:                                                                 │");
+        System.out.println("│   Basic Attack                                                                 │");
+        System.out.println("│    - A quick pistol shot that restores mana                                    │");
+        System.out.println("│                                                                                │");
+        System.out.println("│   Crimson Barrage                                                              │");
+        System.out.println("│    - A rapid burst of bullets that deals increased damage                      │");
+        System.out.println("│                                                                                │");
+        System.out.println("│   Frostwind Bullet                                                             │");
+        System.out.println("│    - A chilling shot that stuns the enemy for 2 turns  or refreshes the stun   │");
+        System.out.println("│                                                                                │");
+        System.out.println("│   Judgement Phantom                                                            │");
+        System.out.println("│    - A high-impact phantom round that delivers massive damage                  │");
+        System.out.println("│      for 2 turns or refreshes the stun                                         │");
         System.out.println("└────────────────────────────────────────────────────────────────────────────────┘");
         System.out.println("┌──────────────────────────────┐");
         System.out.println("│   Press ENTER to continue    │");
@@ -396,7 +413,7 @@ public class Narration{
         System.out.println("│       Aria Caelith - The Void's Eye       │");
         System.out.println("│       Sharpshooter's Combat Overview      │");
         System.out.println("│-------------------------------------------│");
-        System.out.println("│  Gunner (MAX LVL: 60)                     │");
+        System.out.println("│  Gunner (Max LeveL: 60)                   │");
         System.out.println("│  Basic Attack                             │");
         System.out.println("│  Skill 1 - Flurry Shots                   │");
         System.out.println("│  Skill 2 - Frostwind Bullet               │");
@@ -422,14 +439,17 @@ public class Narration{
         System.out.println("┌────────────────────────────────────────────────────────────────────────────────────────────┐");
         System.out.println("│                                        Backstory                                           │");
         System.out.println("├────────────────────────────────────────────────────────────────────────────────────────────┤");
-        System.out.println("│ Aria Caelith shares the burden of her family\'s cursed legacy alongside her brother Kael.   │");
-        System.out.println("│ As the last heirs of the Solmere lineage, the siblings train tirelessly to master their    │");
-        System.out.println("│ skills and uncover the secrets of the forbidden artifact known as the Kim Morvain.         │");
-        System.out.println("│ Fiercely loyal to each other, Aria uses her quick wit and resourcefulness to protect Kael  │");
-        System.out.println("│ and navigate the dangerous path left by centuries of betrayal. Together, they strive to    │");
-        System.out.println("│ break the curse, restore their family\'s honor, and bring justice to those who threaten     │");
-        System.out.println("│ the legacy of the Kim Morvain.                                                             │");
+        System.out.println("│ Aria Caelith grew up in the lawless outskirts of Luthien, where survival demanded          │");
+        System.out.println("│ more than courage—it demanded precision and ruthlessness. Trained from a young age         │");
+        System.out.println("│ in firearms and tactical combat, he quickly became a feared gunner and mercenary.         │");
+        System.out.println("│ His family was torn apart by betrayal and political schemes, leaving Aria to forge          │");
+        System.out.println("│ his own path in a world that respected only strength and cunning.                          │");
+        System.out.println("│ Obsessed with the Kim Morvain, an artifact of immense destructive potential, he             │");
+        System.out.println("│ walks the line between vigilante and outlaw, using every shot and strategy to              │");
+        System.out.println("│ ensure his survival and enforce his own brand of justice. In the shadows, his             │");
+        System.out.println("│ name is both feared and whispered—Aria Caelith, the gunner who never misses.              │");
         System.out.println("└────────────────────────────────────────────────────────────────────────────────────────────┘");
+
         System.out.println("┌──────────────────────────────┐");
         System.out.println("│   Press ENTER to continue    │");
         System.out.println("└──────────────────────────────┘");
@@ -457,6 +477,20 @@ public class Narration{
         System.out.println("│   - Has a habit of whistling when nervous                                      │");
         System.out.println("│   - Can memorize complex mechanisms after seeing them once                     │");
         System.out.println("│   - Prefers fast-paced games over slow strategy games                          │");
+        System.out.println("│                                                                                │");
+        System.out.println("│ Skill Details:                                                                 │");
+        System.out.println("│   Basic Attack                                                                 │");
+        System.out.println("│    - A quick pistol shot that restores mana                                    │");
+        System.out.println("│                                                                                │");
+        System.out.println("│   Crimson Barrage                                                              │");
+        System.out.println("│    - A rapid burst of bullets that deals increased damage                      │");
+        System.out.println("│                                                                                │");
+        System.out.println("│   Frostwind Bullet                                                             │");
+        System.out.println("│    - A chilling shot that stuns the enemy for 2 turns  or refreshes the stun   │");
+        System.out.println("│                                                                                │");
+        System.out.println("│   Judgement Phantom                                                            │");
+        System.out.println("│    - A high-impact phantom round that delivers massive damage                  │");
+        System.out.println("│      for 2 turns or refreshes the stun                                         │");
         System.out.println("└───────────────────────────────────────────────────────────────────────────────┘");
 
         System.out.println("┌───────────────────────────────────────────┐");
@@ -504,6 +538,22 @@ public class Narration{
         System.out.println("│   - Has a secret love for herbal teas                                         │");
         System.out.println("│   - Often talks to magical familiars when thinking                            │");
         System.out.println("│   - Collects rare magical crystals                                            │");
+        System.out.println("│                                                                               │");
+        System.out.println("│ Skill Details:                                                                │");
+        System.out.println("│   Basic Attack                                                                │");
+        System.out.println("│    - A focused blast of starlight that restores mana                          │");
+        System.out.println("│                                                                               │");
+        System.out.println("│   Stellar Shard                                                               │");
+        System.out.println("│    - A condensed star fragment that strikes the enemy                         │");
+        System.out.println("│      with amplified magic damage                                              │");
+        System.out.println("│                                                                               │");
+        System.out.println("│   Chains of Starlight                                                         |");
+        System.out.println("│    - Celestial bindings that deal damage and immobilize the enemy for         │");
+        System.out.println("│      2 turns or refresh the stun                                              │");
+        System.out.println("│                                                                               │");
+        System.out.println("│   Astral Cataclysm                                                            │");
+        System.out.println("│    - A devastating surge of astral magic that unleashes                       │");
+        System.out.println("│      massive destructive power                                                │");
         System.out.println("└───────────────────────────────────────────────────────────────────────────────┘");
         System.out.println("┌──────────────────────────────┐");
         System.out.println("│   Press ENTER to continue    │");
@@ -518,7 +568,7 @@ public class Narration{
         System.out.println("│ Selene Arclight - Weaver of Arcane Flames │");
         System.out.println("│        Mage's Combat Overview             │");
         System.out.println("│-------------------------------------------│");
-        System.out.println("│  Mage (MAX LVL: 60)                       │");
+        System.out.println("│  Mage (Max Level: 60)                     │");
         System.out.println("│  Basic Attack                             │");
         System.out.println("│  Skill 1 - Stellar Shard                  │");
         System.out.println("│  Skill 2 - Chains of Starlight            │");
@@ -539,25 +589,28 @@ public class Narration{
     }
 
     public void mageBackstory() { // implemented through revision 
+        
         System.out.println();
         System.out.println("┌────────────────────────────────────────────────────────────────────────────────┐");
         System.out.println("│                                  Backstory                                     │");
         System.out.println("├────────────────────────────────────────────────────────────────────────────────┤");
-        System.out.println("│ Born into the prestigious Arclight family, Selene was destined to inherit her  │");
-        System.out.println("│ family's mantle as the head of the lineage. A prodigy in the arcane arts, her  │");
-        System.out.println("│ every day was filled with rigorous training, mastering spells that could bend  │");
-        System.out.println("│ starlight and summon cosmic energies.                                          │");
+        System.out.println("│ Born into the prestigious Arclight family, Selene was raised under the weight  │");
+        System.out.println("│ of expectation. Gifted in the arcane arts, her brilliance shone early—capable   │");
+        System.out.println("│ of bending starlight and weaving cosmic energies with precision and grace.      │");
         System.out.println("│                                                                                │");
-        System.out.println("│ Everything changed when her father introduced a boy claiming to be her brother,│");
-        System.out.println("│ a contender for the very inheritance Selene was meant to claim. Pride and      │");
-        System.out.println("│ ambition ignited, fueling her determination to surpass him in every way.       │");
+        System.out.println("│ Her path, however, took a fateful turn when she witnessed the power of Kim      │");
+        System.out.println("│ Morvain—an enigmatic sorcerer who defied the laws of magic itself. His command  │");
+        System.out.println("│ over the void and the whispers of forbidden realms awakened something in her:   │");
+        System.out.println("│ awe, fear, and an unshakable desire to understand that power.                   │");
         System.out.println("│                                                                                │");
-        System.out.println("│ To prove her worth, Selene enrolled in the academy, immersing herself in every │");
-        System.out.println("│ spell, ritual, and fragment of forbidden knowledge it offered. Her goal: to    │");
-        System.out.println("│ achieve feats so extraordinary that even her father cannot deny her as the true│");
-        System.out.println("│ heir. Along the way, confronting the mysterious Kim Morvain may cement her     │");
-        System.out.println("│ legacy.                                                                        │");
+        System.out.println("│ Determined to uncover his secrets and surpass the limits of her own family’s    │");
+        System.out.println("│ teachings, Selene entered the academy. There, she seeks not just mastery, but   │");
+        System.out.println("│ truth—what Kim Morvain discovered, and what it cost him to wield such might.    │");
+        System.out.println("│                                                                                │");
+        System.out.println("│ Whether admiration or obsession drives her, none can tell—but her journey has   │");
+        System.out.println("│ already begun, and the stars themselves seem to tremble in anticipation.        │");
         System.out.println("└────────────────────────────────────────────────────────────────────────────────┘");
+
         System.out.println("┌──────────────────────────────┐");
         System.out.println("│   Press ENTER to continue    │");
         System.out.println("└──────────────────────────────┘");
@@ -583,11 +636,27 @@ public class Narration{
         System.out.println("│   - Has a secret love for herbal teas                                         │");
         System.out.println("│   - Often talks to magical familiars when thinking                            │");
         System.out.println("│   - Collects rare magical crystals                                            │");
+        System.out.println("│                                                                               │");
+        System.out.println("│ Skill Details:                                                                │");
+        System.out.println("│   Basic Attack                                                                │");
+        System.out.println("│    - A focused blast of starlight that restores mana                          │");
+        System.out.println("│                                                                               │");
+        System.out.println("│   Stellar Shard                                                               │");
+        System.out.println("│    - A condensed star fragment that strikes the enemy                         │");
+        System.out.println("│      with amplified magic damage                                              │");
+        System.out.println("│                                                                               │");
+        System.out.println("│   Chains of Starlight                                                         |");
+        System.out.println("│    - Celestial bindings that deal damage and immobilize the enemy for         │");
+        System.out.println("│      2 turns or refresh the stun                                              │");
+        System.out.println("│                                                                               │");
+        System.out.println("│   Astral Cataclysm                                                            │");
+        System.out.println("│    - A devastating surge of astral magic that unleashes                       │");
+        System.out.println("│      massive destructive power                                                │");
         System.out.println("└───────────────────────────────────────────────────────────────────────────────┘");
 
 
         System.out.println("┌───────────────────────────────────────────┐");
-        System.out.println("│  Mage (MAX LVL: 60)                       │");
+        System.out.println("│  Mage (Max Level: 60)                     │");
         System.out.println("│  Basic Attack                             │");
         System.out.println("│  Skill 1 - Stellar Shard                  │");
         System.out.println("│  Skill 2- Chains of Starlight             │");

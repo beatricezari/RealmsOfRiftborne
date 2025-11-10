@@ -14,7 +14,10 @@ public class Gunner extends Hero {
         this.skillCd1 = 4;
         this.skillCd2 = 7;
         this.skillCdU = 10;
+
+        setGunnerCharacterChosen(true); // Javines | plot 
     }
+
 
     DecimalFormat df = new DecimalFormat("#,##0");
 

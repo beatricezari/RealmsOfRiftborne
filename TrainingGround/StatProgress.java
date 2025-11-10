@@ -91,7 +91,7 @@ public class StatProgress {
     public void currencyProgress(Hero hero) {
         Stats statsHandler = new Stats();
 
-        statsHandler.sackOfGold(hero);
+        statsHandler.sackOfGoldAfterTraining(hero);
 
     }
 

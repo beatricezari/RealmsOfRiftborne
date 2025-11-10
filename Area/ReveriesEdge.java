@@ -3,6 +3,7 @@ import BattleMechanics.*;
 import Boss.*;
 import Hero.*;
 import Mobs.*;
+import Narration.*; // Javines | Plot 
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -12,6 +13,7 @@ public class ReveriesEdge {
     DecimalFormat df = new DecimalFormat("#,##0");
     MobBattleMechanic mobBattle = new MobBattleMechanic();
     EliteBattleMechanic eliteBattle = new EliteBattleMechanic();
+    GunnerPlot gunnerPlotHandler = new GunnerPlot(); // Javines | Plot
     boolean retreat = false;
     boolean explore = true;
     boolean exit = false;
@@ -291,10 +293,16 @@ public class ReveriesEdge {
                     System.out.println("│                                                │");
                     System.out.println("└────────────────────────────────────────────────┘");
                     hero.levelUp(expGained);
+                    // need nako i remove and i move sa front sa plot related shits kaso need ko permission (will do this sa onsite class)
                     System.out.println("The shadow fades... Reverie's Edge grows silent once again.");
                     System.out.println();
                     System.out.println("You leave the cursed borderlands behind.");
                     System.out.println();
+
+                    if(hero.getGunnerCharacterChosen() && hero.getHaveDefeatedArea2Boss()) { // Javines | Plot
+                        gunnerPlotHandler.gunnerAfterArea2();
+                    }
+
                     currentArea = 0; // automatically exits the REVERIE EDGE
                     exit = true;
                     break;

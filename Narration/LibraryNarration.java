@@ -69,7 +69,7 @@ public class LibraryNarration {
                 System.out.print("-->| ");
                 String answer1 = scanner.nextLine();
 
-                if (answer1.equalsIgnoreCase("Abo ng sigarlyo") || answer1.equalsIgnoreCase("Cigarette ash")) {
+                if (answer1.equalsIgnoreCase("Abo ng sigarilyo") || answer1.equalsIgnoreCase("Cigarette ash")) {
                     System.out.println();
                     System.out.println("┌───────────────────────┐");
                     System.out.println("│   Nice! You got it!   │");
