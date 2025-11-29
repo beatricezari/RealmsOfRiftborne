@@ -1,10 +1,13 @@
 package DesignRelated;
 
 import Hero.*;
+import Narration.*;
 
 import java.util.Scanner;
 
 public class Characters {
+
+    Narration printdelayHandler = new Narration();
 
     static Scanner scanner = new Scanner(System.in);
     
@@ -16,9 +19,46 @@ public class Characters {
         System.out.println("          │   The winds whisper your choice... The path of the Swordsman is yours to walk.    │");
         System.out.println("          └───────────────────────────────────────────────────────────────────────────────────┘");
         System.out.println("     >>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
-        System.out.println();
+
+        String[] lines = {
+            "",
+            "  .         *             .                *           ░░░░░░░░░░░░",
+            "      ┌────────────────────────────────────┐      .    ░░░███▓▓▓▓▓▓░░░",
+            "      |   Player Character: Kael Solmere   |           ░░░▓▓▓███▓▓▓▓▓▓░░░",
+            "      └────────────────────────────────────┘   *       ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░",
+            "          .                    .                          ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░",
+            "                      *                                      ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░",
+            "                                                                ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░",
+            "       .               .                  ░░░░░░░░░░░░             ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░         ░░░░░░",
+            "              *                        ░░░▓▓▓▓▓▓███░░░        .       ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░   ░░░███░░░",
+            "                                    ░░░▓▓▓▓▓▓███▓▓▓░░░                   ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░▓▓▓░░░",
+            "                          *      ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░                      ░░░▓▓▓▓▓▓███▓▓▓░░░▓▓▓░░░",
+            "    .                         ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░                    *       ░░░▓▓▓▓▓▓███░░░▓▓▓░░░",
+            "               .           ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░              .                   ░░░░░░░░░███░░░",
+            "                        ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░                                  ░░░▓▓▓▓▓▓▓▓▓░░░███░░░",
+            "      ░░░░░░         ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░                                  ░░░███░░░░░░░░░   ░░░███░░░",
+            "      ░░░███░░░   ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░           .       *                 ░░░░░░               ░░░███░░░",
+            "         ░░░▓▓▓░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░                                                      .         ░░░███░░░░░░",
+            "         ░░░▓▓▓░░░▓▓▓███▓▓▓▓▓▓░░░                                  .            *                *     ░░░███░░░",
+            "   .     ░░░▓▓▓░░░███▓▓▓▓▓▓░░░          .               .                                              ░░░░░░░░░",
+            "            ░░░███░░░░░░░░░                                                                                    ",
+            "         ░░░███░░░▓▓▓▓▓▓▓▓▓░░░              .                           .              .                       ",
+            "      ░░░███░░░   ░░░░░░░░░███░░░   *                       .         ┌──────────────────────────────┐    .    ",
+            "░░░░░░███░░░     .      *  ░░░░░░                                     │   Press ENTER to continue    │            ",
+            "░░░███░░░                                   .       *                 └──────────────────────────────┘            ",
+            "░░░░░░░░░                .                                                                        .                ",
+            ""
+        };
+
+        for (int i = 0; i < lines.length; i++) {  
+            printdelayHandler.printLineWithDelay(lines[i], 50); 
+        }
+
+        scanner.nextLine();
+
+        /*System.out.println();
         System.out.println("  .         *             .                *           ░░░░░░░░░░░░");
-        System.out.println("      ┌────────────────────────────────────┐      .    ░░░███▓▓▓▓▓▓░░░");
+        System.out.println("      ┌────────────────────────────────────┐      .    ░░░███▓▓▓▓ ▓▓░░░");
         System.out.println("      |   Player Character: Kael Solmere   |           ░░░▓▓▓███▓▓▓▓▓▓░░░");
         System.out.println("      └────────────────────────────────────┘   *       ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░");
         System.out.println("          .                    .                          ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░");
@@ -44,6 +84,7 @@ public class Characters {
         System.out.println("░░░░░░░░░                .                                                                        .                ");
         System.out.println();
         scanner.nextLine();
+        */
 
     }
 
@@ -56,7 +97,39 @@ public class Characters {
         System.out.println("        └────────────────────────────────────────────────────────────────────────────────┘");
         System.out.println("  >>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
         System.out.println();
-        System.out.println();
+
+        String[] lines = {
+            "    .            *             .         *          █░░░░░███░░░███░░░░░░░░░░░░░░░░░░░░░███░░░░░░",
+            "      ┌────────────────────────────────────┐        █░░▓▓▓███▓▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓▓░░█",
+            "  .   |   Player Character: Aria Caelith   |   .       ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░████████▓▓▓▓███▓▓▓░░░",
+            "      └────────────────────────────────────┘           ░░░░░░░░░░░░░░░░░█   ░░░░░░░░░░░░░░░░░░░░░",
+            "                                                                            ░░░  ███ ░▓▓▓▓▓░░░",
+            "               *        .             .                              *      ░░░      ░▓▓▓▓▓░░░",
+            "        .                                                                █░░░░░░░░░░░░░░░▓▓▓▓▓░░░",
+            "                                                *                                    ░▓▓▓▓▓▓▓▓░░░",
+            "                             *                                *                      ░▓▓▓▓▓▓▓▓░░░",
+            "                   .                                 .                                  ░▓▓▓▓▓▓▓▓░░░",
+            "       *                         .                                       .      *       ░▓▓▓▓▓▓▓▓░░░",
+            "                                             ░░░                *                       ░░░░░░░░░░░░",
+            "      ██████░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░      .                                                 ",
+            "   ░░████▓▓▓██████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                                 *                      ",
+            "   ░░████░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░                                                        ",
+            "   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░                    .                         .             ",
+            "      ░░░▓▓▓███░░█      █░░                                                                           *         ",
+            "   ░░░▓▓▓███▓▓▓░░░░░░░░░         *                     ┌──────────────────────────────┐                        ",
+            "░░░▓▓▓███▓▓▓░░░                                    .   │   Press ENTER to continue    │                     ",
+            "░░░███▓▓▓░░░   *                           *           └──────────────────────────────┘                             ",
+            "░░░░░░░░░                     .                                         .                      *                        ",
+            ""
+        };
+
+        for (int i = 0; i < lines.length; i++) {  
+            printdelayHandler.printLineWithDelay(lines[i], 50); 
+        }
+
+        scanner.nextLine();
+
+        /*System.out.println();
         System.out.println("    .            *             .         *          █░░░░░███░░░███░░░░░░░░░░░░░░░░░░░░░███░░░░░░");
         System.out.println("      ┌────────────────────────────────────┐        █░░▓▓▓███▓▓▓███▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓███▓▓▓▓▓▓░░█");
         System.out.println("  .   |   Player Character: Aria Caelith   |   .       ░▓▓▓▓▓▓▓▓▓▓▓▓▓▓░░░░░░████████▓▓▓▓███▓▓▓░░░");
@@ -80,7 +153,7 @@ public class Characters {
         System.out.println("░░░░░░░░░                     .                                         .                      *                        ");
         System.out.println();
         scanner.nextLine();
-
+        */
     }
 
     public void mageCharacter() {
@@ -91,7 +164,44 @@ public class Characters {
         System.out.println("      └────────────────────────────────────────────────────────┘");
         System.out.println(">>>>> - - - - - - - - - - - - - - - - - - - - - - - - - - - - - <<<<<");
         System.out.println();
-        System.out.println();
+
+        String[] lines = {
+            "        ░░█    ┌────────────────────────────────────┐     █░       .        ",
+            "      ░░░░█    |  Player Character: Selene Arclight |     █░░░░             ",
+            "      ░░░░█    └────────────────────────────────────┘     █░░░░      *      ",
+            "    ░░░░░░▓           *                                   ▓░░░░░░          *  ",
+            "  ░░░░░░░░░░░                                     .     ░░░░░░░░░░░     .         ",
+            "░░░░▓                 .           .        *                    ▓░░░░        ",
+            "░░░▓▓  ▓█      *                                            ▓█  ▓▓░░░      ",
+            "░░░░▓▓▓▓▓▓█                                               █▓▓▓▓▓▓░░░░       ",
+            "░░░░▓  ▓█                                                   ▓█  ▓░░░░   .  ",
+            "░░▓░░         .                      *     .      *             ░░▓░░       ",
+            "  ░░░░█              .                                        █░░░░        ",
+            "    ░░░░█                       .                           █░░░░             ",
+            "      ░░░░█                                               █░░░░              ",
+            "      ░░░░█                                               █░░░░       .      ",
+            "   .    ░░█                  .               .    *       █░░               ",
+            "        ░░░         *                                     ░░░                ",
+            "         ░░░                    *                        ░░░    .   *            ",
+            "  *      ░░░                                             ░░░              .     ",
+            "         ░▓░                        .           *        ░▓░                  ",
+            "    .     ░░                                             ░░                 ",
+            "          ░░           .                                 ░░        .     *    ",
+            "          ░░                  .                          ░░                  ",
+            "  *       ░░░     ┌──────────────────────────────┐      ░░░    *            ",
+            "      .   ░▓░     │   Press ENTER to continue    │      ░▓░                  ",
+            "           ▓░     └──────────────────────────────┘      ░▓              . ",
+            ""
+        };
+
+        for (int i = 0; i < lines.length; i++) {  
+            printdelayHandler.printLineWithDelay(lines[i], 50); 
+        }
+
+        scanner.nextLine();
+
+
+        /*System.out.println();
         System.out.println("        ░░█    ┌────────────────────────────────────┐     █░       .        ");
         System.out.println("      ░░░░█    |  Player Character: Selene Arclight |     █░░░░             ");
         System.out.println("      ░░░░█    └────────────────────────────────────┘     █░░░░      *      ");
@@ -119,11 +229,131 @@ public class Characters {
         System.out.println("           ▓░     └──────────────────────────────┘      ░▓              . ");
         System.out.println();
         scanner.nextLine();
-
+        */
 
     }
 
-    public void swordsmanCharacterStats(Hero hero) {
+    public void swordsmanCharacterStats(Hero hero) { // implemented with print delay 
+        String[] lines = {
+            "",
+            " .      *   ┌────────────────────────────────────────────────────┐",
+            "      .     |   Player Character: Kael Solmere - Current Stats   |",
+            " *          └────────────────────────────────────────────────────┘",
+            "░░░░░░░░░░░░> Character Level:   .    " + hero.getLevel() + " .   *   .  .   *  ",
+            "░░░███▓▓▓▓▓▓░░░> Current Experience:  " + hero.getExperience() + " .   *    .   *   ",
+            "░░░▓▓▓███▓▓▓▓▓▓░░░  *     .         > Health:   " + hero.getBaseHp() + " .    . ",
+            "░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░          *    > Attack:   " + hero.getAttack() + ".    .   * ",
+            "  ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░    .     .  > Mana:     " + hero.getMana() + " *   .   .   *",
+            "     ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░          > Defense:  " + hero.getDefense() + " .   *  .  *",
+            "  .     ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░   *   > Speed:    " + hero.getSpeed(),
+            "   *        ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░         ░░░░░░  .          .    ",
+            "               ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░   ░░░███░░░   ",
+            "      .           ░░░▓▓▓▓▓▓███▓▓▓▓▓▓░░░▓▓▓░░░                     ",
+            "                     ░░░▓▓▓▓▓▓███▓▓▓░░░▓▓▓░░░     .       .       ",
+            "       *     .          ░░░▓▓▓▓▓▓███░░░▓▓▓░░░  *                  ",
+            "                           ░░░░░░░░░███░░░    .       .           ",
+            "    .             *     ░░░▓▓▓▓▓▓▓▓▓░░░███░░░              *      ",
+            "                     ░░░███░░░░░░░░░   ░░░███░░░                  ",
+            "      .      .       ░░░░░░               ░░░███░░░           .   ", 
+            "                              .       *      ░░░███░░░░░░         ",
+            "       *                                        ░░░███░░░         ",
+            "                 .        *            .        ░░░░░░░░░    .    ",
+            "    .                                                                                                        ",
+            "┌──────────────────────────────┐",
+            "│   Press ENTER to continue    │",
+            "└──────────────────────────────┘"
+        };
+
+        for (int i = 0; i < lines.length; i++) {  
+            printdelayHandler.printLineWithDelay(lines[i], 15); 
+        }
+
+        scanner.nextLine();
+    }
+
+    public void gunnerCharacterStats(Hero hero) { // implemented with print delay
+        String[] lines = {
+            "",
+            "    .            *             .         *      ",
+            "┌────────────────────────────────────────────────────┐    ",
+            "|   Player Character: Aria Caelith - Current Stats   |   .",
+            "└────────────────────────────────────────────────────┘    ",
+            "  *    .       *        .             .        . ",
+            "  * > Character Level:     " + hero.getLevel() + "   .       *     ",
+            "  * > Current Experience:  " + hero.getExperience() + "   .      *   ",
+            "       > Health:   " + hero.getHp() + "        .     *    .  ",
+            "   .   > Attack:   " + hero.getAttack() + ".    .  .  *    .    *  ",
+            "       > Mana:     " + hero.getMana() + " .      * .     .     *   .",
+            "   .   > Defense:  " + hero.getDefense() + " .   .      .   .    *",
+            "       > Speed:    " + hero.getSpeed() + "*        .        .       . ",
+            "                                             ░░░",
+            "      ██████░░░░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░",
+            "   ░░████▓▓▓██████▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░",
+            "   ░░████░░░▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓░",
+            "   ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░",
+            "      ░░░▓▓▓███░░█      █░░                     ",
+            "   ░░░▓▓▓███▓▓▓░░░░░░░░░         *     .        ",
+            "░░░▓▓▓███▓▓▓░░░              .                   ",
+            "░░░███▓▓▓░░░   *                   .        *    ",
+            "░░░░░░░░░          .           .             .    ",
+            "",
+            "┌──────────────────────────────┐",
+            "│   Press ENTER to continue    │",
+            "└──────────────────────────────┘"
+        };
+
+        for (int i = 0; i < lines.length; i++) {
+            printdelayHandler.printLineWithDelay(lines[i], 15); 
+        }
+
+        scanner.nextLine(); 
+    }
+
+    public void mageCharacterStats(Hero hero) { // implemented with print delay
+        String[] lines = {
+            "",
+            "",
+            " .   *  ░░█    ┌────────────────────────────────────────────────────┐",
+            "   .  ░░░░█    |  Player Character: Selene Arclight - Current Stats |",
+            "      ░░░░█    └────────────────────────────────────────────────────┘",
+            " *  ░░░░░░▓           *           .          .               .          ",
+            "  ░░░░░░░░░░░                                     .                  ",
+            "░░░░▓            > Character Level:     " + hero.getLevel() + "   .       *        .    ",
+            "░░░▓▓  ▓█      *           .            *                  .           ",
+            "░░░░▓▓▓▓▓▓█  .                    .                                    ",
+            "░░░░▓  ▓█        > Current Experience:  " + hero.getExperience() + "   .       *        .   ",
+            "░░▓░░         .                      *     .      *                  ",
+            "  ░░░░█  .        *   .                                         .      ",
+            "    ░░░░█          > Health:   " + hero.getHp() + "             *        .   ",
+            "      ░░░░█           .                                    .           ",
+            "      ░░░░█     .              *     .                                 ",
+            "   .    ░░█        > Attack:   " + hero.getAttack() + "                   .  ",
+            "        ░░░         *                                    .            ",
+            "         ░░░                       .           *                    ",
+            "  *      ░░░       > Mana:     " + hero.getMana() + "            *            ",
+            "         ░▓░                        .           *                    ",
+            "    .     ░░      .                                      .        .   ",
+            "          ░░       > Defense:  " + hero.getDefense() + "            .    *   ",
+            "          ░░                  .                                 *    ",
+            "  *       ░░░                               .         .              ",
+            "      .   ░▓░      > Speed:    " + hero.getSpeed() + "                   *  ",
+            "           ▓░           *                   *                     .  ",
+            "┌──────────────────────────────┐",
+            "│   Press ENTER to continue    │",
+            "└──────────────────────────────┘"
+        };
+
+        for (int i = 0; i < lines.length; i++) {
+            printdelayHandler.printLineWithDelay(lines[i], 15); 
+        }
+
+        scanner.nextLine();
+    }
+
+
+
+
+    /*public void swordsmanCharacterStats(Hero hero) {
         // to be implemented
         System.out.println();
         System.out.println(" .      *   ┌────────────────────────────────────────────────────┐");
@@ -155,8 +385,9 @@ public class Characters {
         scanner.nextLine();
 
     }
+        */
 
-    public void gunnerCharacterStats(Hero hero) {
+    /*public void gunnerCharacterStats(Hero hero) {
         // to be implemented
         System.out.println();
         System.out.println("    .            *             .         *      ");
@@ -188,8 +419,9 @@ public class Characters {
         scanner.nextLine();
 
     }
+        */
 
-    public void mageCharacterStats(Hero hero) {
+    /*public void mageCharacterStats(Hero hero) {
         // to be implemented
         System.out.println();
         System.out.println();
@@ -225,4 +457,5 @@ public class Characters {
 
 
     }
+        */
 }

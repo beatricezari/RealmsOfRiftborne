@@ -6,6 +6,8 @@ public class LibraryNarration {
 
     private static Scanner scanner = new Scanner(System.in);
 
+    Narration printDelayHandler = new Narration();
+
     public void findTheLostBookNarration(){
         String[] quest1 = {
             "The library hums with ancient energy.",
@@ -15,7 +17,13 @@ public class LibraryNarration {
             "\"Can you help find it on one of the five nearby shelves?\""
         };
 
-        playDialogueNarration(quest1);
+        for (int i = 0; i < quest1.length; i++) {
+            //scanner.nextLine(); 
+            printDelayHandler.printWithDelay(quest1[i], 40); 
+            System.out.println("\n");
+        }
+
+        //playDialogueNarration(quest1);
 
     }
 
@@ -26,7 +34,13 @@ public class LibraryNarration {
             "\"Marvelous! You have a keen eye, young scholar. Mystvale could use more minds like yours.\""
         };
 
-        playSuccessOrFailNarration(success1);
+        for (int i = 0; i < success1.length; i++) {
+            //scanner.nextLine(); 
+            printDelayHandler.printWithDelay(success1[i], 40); 
+            System.out.println("\n");
+        }
+
+        //playSuccessOrFailNarration(success1);
 
     }
 
@@ -37,7 +51,13 @@ public class LibraryNarration {
             "\"Perhaps next time, they\'ll reveal themselves to you.\""
         };
 
-        playSuccessOrFailNarration(fail1);
+        for (int i = 0; i < fail1.length; i++) {
+            //scanner.nextLine(); 
+            printDelayHandler.printWithDelay(fail1[i], 40); 
+            System.out.println("\n");
+        }
+
+        //playSuccessOrFailNarration(fail1);
 
     }
 
@@ -49,7 +69,13 @@ public class LibraryNarration {
             "\"Will you try your wit?\""
         };
 
-        playDialogueNarration(quest3);
+        for (int i = 0; i < quest3.length; i++) {
+            //scanner.nextLine(); 
+            printDelayHandler.printWithDelay(quest3[i], 40); 
+            System.out.println("\n");
+        }
+
+        //playDialogueNarration(quest3);
 
     }
 
@@ -57,12 +83,26 @@ public class LibraryNarration {
         boolean continueInput = true;
         boolean isCorrect = false;
 
-        System.out.println("┌───────────────────────────────────────────────────┐");
+        String[] riddle = {
+            "┌───────────────────────────────────────────────────┐",
+            "│   Nang maliit ay mestiso, nang lumaki'y negro    │",
+            "└───────────────────────────────────────────────────┘",
+            "┌─────────────────────────────────────────────────────────┐",
+            "│   When young was fair-skinned, when grown became dark.  │",
+            "└─────────────────────────────────────────────────────────┘"
+        };
+
+        for (int i = 0; i < riddle.length; i++) {  
+            printDelayHandler.printLineWithDelay(riddle[i], 50); 
+        }
+
+        /*System.out.println("┌───────────────────────────────────────────────────┐");
         System.out.println("│   Nang maliit ay mestiso, nang lumaki'y negro    │");
         System.out.println("└───────────────────────────────────────────────────┘");
         System.out.println("┌─────────────────────────────────────────────────────────┐");
         System.out.println("│   When young was fair-skinned, when grown became dark.  │");
         System.out.println("└─────────────────────────────────────────────────────────┘");
+        */
 
         while (continueInput) {
             try {
@@ -106,7 +146,22 @@ public class LibraryNarration {
         boolean continueInput = true;
         boolean isCorrect = false;
 
-        System.out.println("┌────────────────────────────────────────────────────────────┐");
+        String[] riddle = {
+            "┌────────────────────────────────────────────────────────────┐",
+            "│   Walang ulo, walang mata, may bibig na laging umaariba,   │",
+            "│               At isang tenga na bubuka-buka                │",
+            "└────────────────────────────────────────────────────────────┘",
+            "  ┌───────────────────────────────────────────────────────┐",
+            "  │   No head, no eyes, a mouth that's always roaring,   │",
+            "  │           And an ear that opens and closes.           │",
+            "  └───────────────────────────────────────────────────────┘"
+        };
+
+        for (int i = 0; i < riddle.length; i++) {  
+            printDelayHandler.printLineWithDelay(riddle[i], 50); 
+        }
+
+        /*System.out.println("┌────────────────────────────────────────────────────────────┐");
         System.out.println("│   Walang ulo, walang mata, may bibig na laging umaariba,   │");
         System.out.println("│               At isang tenga na bubuka-buka                │");
         System.out.println("└────────────────────────────────────────────────────────────┘");
@@ -114,6 +169,7 @@ public class LibraryNarration {
         System.out.println("  │   No head, no eyes, a mouth that's always roaring,   │");
         System.out.println("  │           And an ear that opens and closes.           │");
         System.out.println("  └───────────────────────────────────────────────────────┘");
+        */
 
         while (continueInput) {
             try {
@@ -158,12 +214,27 @@ public class LibraryNarration {
         boolean continueInput = true;
         boolean isCorrect = false;
 
-        System.out.println("┌──────────────────────────────────────────────────────────────┐");
+        String[] riddle = {
+            "┌──────────────────────────────────────────────────────────────┐",
+            "│   Duguang buhok ni Letecia, sinipsip ng kanyang mga bisita   │",
+            "└──────────────────────────────────────────────────────────────┘",
+            "  ┌────────────────────────────────────────────────────────┐",
+            "  │   Letecia's bloody hair was sucked by her visitors.   │",
+            "  └────────────────────────────────────────────────────────┘"
+        };
+
+        for (int i = 0; i < riddle.length; i++) {  
+            printDelayHandler.printLineWithDelay(riddle[i], 50); 
+        }
+
+
+        /*System.out.println("┌──────────────────────────────────────────────────────────────┐");
         System.out.println("│   Duguang buhok ni Letecia, sinipsip ng kanyang mga bisita   │");
         System.out.println("└──────────────────────────────────────────────────────────────┘");
         System.out.println("  ┌────────────────────────────────────────────────────────┐");
         System.out.println("  │   Letecia's bloody hair was sucked by her visitors.   │");
         System.out.println("  └────────────────────────────────────────────────────────┘");
+        */
 
         while (continueInput) {
             try {

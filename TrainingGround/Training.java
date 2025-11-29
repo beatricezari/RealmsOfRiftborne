@@ -20,7 +20,7 @@ public class Training {
 
     public void trainingGround(Hero hero){
 
-        if(!hero.haveExploredButExited()){
+        if(!hero.haveExploredButExited()){ 
             narrationHandler.exploreNarration();
             hero.setHaveExploredButExited(true);
         }
