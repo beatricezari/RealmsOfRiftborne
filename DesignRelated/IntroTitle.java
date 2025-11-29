@@ -6,6 +6,8 @@ public class IntroTitle {
 
     Scanner scanner = new Scanner(System.in);
 
+    // edit the gates piste ina gate kairita kapangit
+
     public void mystvaleIntroTitle() {
 
         System.out.println();

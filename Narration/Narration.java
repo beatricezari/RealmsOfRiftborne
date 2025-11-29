@@ -214,7 +214,7 @@ public class Narration{
     }
 
     //box format
-    public void swordsmanDetails() { // implemented through revision
+    public void swordsmanDetails() { // implemented through revision. huot ang box
         System.out.println();
         System.out.println("┌────────────────────┐");
         System.out.println("│  Player Character  │");
@@ -393,7 +393,7 @@ public class Narration{
         System.out.println("│    - A rapid burst of bullets that deals increased damage                      │");
         System.out.println("│                                                                                │");
         System.out.println("│   Frostwind Bullet                                                             │");
-        System.out.println("│    - A chilling shot that stuns the enemy for 2 turns  or refreshes the stun   │");
+        System.out.println("│    - A chilling shot that stuns the enemy for 2 turns or refreshes the stun    │");
         System.out.println("│                                                                                │");
         System.out.println("│   Judgement Phantom                                                            │");
         System.out.println("│    - A high-impact phantom round that delivers massive damage                  │");
