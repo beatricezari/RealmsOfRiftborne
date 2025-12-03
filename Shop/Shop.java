@@ -1,6 +1,8 @@
 package Shop;
 
 import Hero.*;
+import Inventory.Inventory;
+
 import java.util.*;
 import java.text.DecimalFormat;
 
@@ -90,67 +92,44 @@ public class Shop {
                 return;
             }
 
-            while(true){
-                try{
-                    System.out.println();
-                    System.out.println("You have selected: " + getItem(choice));
-                    System.out.println("[1] Purchase Item");
-                    System.out.println("[2] View Item Details");
-                    System.out.println("[3] Cancel");
-                    System.out.print(">>> ");
-                    select = sc.nextInt();
+            boolean loop = true;
+            while(loop) {    
+                while(true){
+                    try{
+                        System.out.println();
+                        System.out.println("You have selected: " + getItem(choice));
+                        System.out.println("[1] Purchase Item");
+                        System.out.println("[2] View Item Details");
+                        System.out.println("[3] Cancel");
+                        System.out.print(">>> ");
+                        select = sc.nextInt();
 
-                    if(select < 1 || select > 3){
-                        System.out.println("\nInvalid choice. Please enter a number between 1 and 3.\n\n");
-                        continue;
-                    }
-
-                    break;
-
-                } catch (Exception e) {
-                    System.out.println("\nInvalid input. Please enter a number corresponding to your choice.\n\n");
-                    sc.nextLine(); // Clear the invalid input
-                }
-            }
-
-            switch(select){
-                case 1:
-                    int amount = 0;
-                    int price = getItemPrice(choice);
-                    while(true){
-                        try{
-                            System.out.print("\n\nEnter Amount to Purchase: ");
-                            amount = sc.nextInt();
-
-                            if(amount <= 0){
-                                System.out.println("\nInvalid amount. Please enter a positive number.\n\n");
-                                continue;
-                            }
-
-                            if(amount > 99){
-                                System.out.println("\nYou can only store up to 99 " + getItem(choice) + ".\n\n");
-                                continue;
-                            }
-
-                            break;
-                        } catch (Exception e) {
-                            System.out.println("\nInvalid input. Please enter a valid amount.\n\n");
-                            sc.nextLine(); // Clear the invalid input
+                        if(select < 1 || select > 3){
+                            System.out.println("\nInvalid choice. Please enter a number between 1 and 3.\n\n");
                             continue;
                         }
-                    }
-                    for(int i = 0; i < amount; i++){
-                        purchaseItem(hero, choice);
-                    }
 
-                    System.out.println("\nPurchased " + amount + " " + getItem(choice) + "(s) for " + df.format(price * amount) + "g.");
-                    break;
-                case 2:
-                    itemDetails(choice);
-                    break;
-                case 3:
-                    System.out.println("\nTransaction cancelled.\n\n");
-                    break;
+                        break;
+
+                    } catch (Exception e) {
+                        System.out.println("\nInvalid input. Please enter a number corresponding to your choice.\n\n");
+                        sc.nextLine(); // Clear the invalid input
+                    }
+                }
+                
+                switch(select){
+                    case 1:
+                        purchaseItem(hero, choice);
+                        loop = false;
+                        break;
+                    case 2:
+                        itemDetails(choice);
+                        break;
+                    case 3:
+                        System.out.println("\nTransaction cancelled.\n\n");
+                        loop = false;
+                        break;
+                }
             }
         }
     }
@@ -172,64 +151,93 @@ public class Shop {
     }
 
     public void purchaseItem(Hero hero, int choice) {
+        int amount = 0;
+        int price = getItemPrice(choice);
+        String confirmation = "";
 
-        // capacity check per item type
-        switch (choice) {
-            case 1 -> {
-                if (hero.getInventory().getSmallHealthPotion() >= hero.getInventory().getCapacity()) {
-                    System.out.println("\nCapacity reached for Small Health Potions.");
-                    return;
+        Inventory inv = hero.getInventory();
+
+        // Ask for amount
+        while (true) {
+            try {
+                System.out.print("\n\nEnter Amount to Purchase: ");
+                amount = sc.nextInt();
+
+                if (amount <= 0) {
+                    System.out.println("\nInvalid amount. Please enter a positive number.\n\n");
+                    continue;
                 }
-            }
-            case 2 -> {
-                if (hero.getInventory().getMediumHealthPotion() >= hero.getInventory().getCapacity()) {
-                    System.out.println("\nCapacity reached for Medium Health Potions.");
-                    return;
+
+                if (amount > 99) {
+                    System.out.println("\nYou can only store up to 99 " + getItem(choice) + ".\n\n");
+                    continue;
                 }
-            }
-            case 3 -> {
-                if (hero.getInventory().getLargeHealthPotion() >= hero.getInventory().getCapacity()) {
-                    System.out.println("\nCapacity reached for Large Health Potions.");
-                    return;
-                }
-            }
-            case 4 -> {
-                if (hero.getInventory().getSmallManaPotion() >= hero.getInventory().getCapacity()) {
-                    System.out.println("\nCapacity reached for Small Mana Potions.");
-                    return;
-                }
-            }
-            case 5 -> {
-                if (hero.getInventory().getMediumManaPotion() >= hero.getInventory().getCapacity()) {
-                    System.out.println("\nCapacity reached for Medium Mana Potions.");
-                    return;
-                }
-            }
-            case 6 -> {
-                if (hero.getInventory().getLargeManaPotion() >= hero.getInventory().getCapacity()) {
-                    System.out.println("\nCapacity reached for Large Mana Potions.");
-                    return;
-                }
+
+                break;
+            } catch (Exception e) {
+                System.out.println("\nInvalid input. Please enter a valid amount.\n\n");
+                sc.nextLine();
             }
         }
 
-        int price = getItemPrice(choice);
+        // Check capacity depending on the item
+        int current = switch (choice) {
+            case 1 -> inv.getSmallHealthPotion();
+            case 2 -> inv.getMediumHealthPotion();
+            case 3 -> inv.getLargeHealthPotion();
+            case 4 -> inv.getSmallManaPotion();
+            case 5 -> inv.getMediumManaPotion();
+            case 6 -> inv.getLargeManaPotion();
+            default -> 0;
+        };
 
-        if (hero.getGold() < price) {
+        int capacity = inv.getCapacity();
+        int availableCapacity = capacity - current;
+
+        if (amount > availableCapacity) {
+            System.out.println("\nYou can only purchase " + availableCapacity + " more " + getItem(choice) + "(s).\n");
+            return;
+        }
+
+        // Check gold for total amount
+        int totalCost = price * amount;
+
+        if (hero.getGold() < totalCost) {
             System.out.println("\nYou do not have enough gold.\n");
             return;
         }
 
-        hero.setGold(hero.getGold() - price);
+        // Confirm purchase
+        while (true) {
+            System.out.println("\nYou are about to purchase " + amount + " " + getItem(choice) + "(s) for " + df.format(totalCost) + "g.");
+            System.out.print("Confirm Purchase? (Y/N): ");
+            confirmation = sc.next().trim().toUpperCase();
 
-        switch (choice) {
-            case 1 -> hero.getInventory().setSmallHealthPotion(hero.getInventory().getSmallHealthPotion() + 1);
-            case 2 -> hero.getInventory().setMediumHealthPotion(hero.getInventory().getMediumHealthPotion() + 1);
-            case 3 -> hero.getInventory().setLargeHealthPotion(hero.getInventory().getLargeHealthPotion() + 1);
-            case 4 -> hero.getInventory().setSmallManaPotion(hero.getInventory().getSmallManaPotion() + 1);
-            case 5 -> hero.getInventory().setMediumManaPotion(hero.getInventory().getMediumManaPotion() + 1);
-            case 6 -> hero.getInventory().setLargeManaPotion(hero.getInventory().getLargeManaPotion() + 1);
+            if (confirmation.equals("Y") || confirmation.equals("N"))
+                break;
+
+            System.out.println("Invalid input. Please enter Y or N.");
         }
+
+        if (confirmation.equals("N")) {
+            System.out.println("\nPurchase cancelled.\n\n");
+            return;
+        }
+
+        // Deduct gold
+        hero.setGold(hero.getGold() - totalCost);
+
+        // Add items
+        switch (choice) {
+            case 1 -> inv.setSmallHealthPotion(current + amount);
+            case 2 -> inv.setMediumHealthPotion(current + amount);
+            case 3 -> inv.setLargeHealthPotion(current + amount);
+            case 4 -> inv.setSmallManaPotion(current + amount);
+            case 5 -> inv.setMediumManaPotion(current + amount);
+            case 6 -> inv.setLargeManaPotion(current + amount);
+        }
+
+        System.out.println("\nPurchased " + amount + " " + getItem(choice) + "(s) for " + df.format(totalCost) + "g.");
     }
 
     public int getItemPrice(int choice) {

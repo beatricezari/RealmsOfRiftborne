@@ -36,6 +36,14 @@ public class Inventory {
         if(mediumManaPotion > 0)   System.out.println("Medium Mana Potions: " + mediumManaPotion);
         if(largeManaPotion > 0)    System.out.println("Large Mana Potions: " + largeManaPotion);
 
+        if(isEmpty()) {
+            //insert inventory empty art here
+            System.out.println("Your inventory is empty!");
+        }
+
+        System.out.print("\n\nPress enter to continue...");
+        sc.nextLine();
+
         System.out.println();
         System.out.println();
     }
