@@ -8,7 +8,7 @@ public class Kim extends Boss {
 
     public Kim() {
         super(60000, 3000, 2500, 800, 30, "Kim Morvain - The Vengeful Shadow", "Oblivion Slash", "Abyssal Grasp", "Dark Pulse", "Eternal Shroud", 300, 400, 350, 800);
-        //omg stop dadeh dont one hit me
+        
         this.skillCd1 = 6;
         this.skillCd2 = 8;  
         this.skillCd3 = 8;
@@ -58,6 +58,15 @@ public class Kim extends Boss {
 
         System.out.println(getSkill1() + " deals " + df.format(damageDealt) + " damage!");
 
+        if (Math.random() < 1) {
+            if (hero.getStunned() > 0) {
+                System.out.println("Kneel, mortal… your resistance ends now. (Stun refreshed to 1 turn)");
+            } else {
+                System.out.println("Be still before your end. (Stun 1)");
+            }
+            hero.setStun(1);
+        }
+
 
         hero.setHp(hero.getHp() - damageDealt);
     }
@@ -78,6 +87,15 @@ public class Kim extends Boss {
         int damageDealt = (int) Math.round(damage) - hero.getDefense()/2;
 
         System.out.println(getSkill2() + " deals " + df.format(damageDealt) + " damage!");
+
+        if (Math.random() < 1) {
+            if (hero.getStunned() > 0) {
+                System.out.println("Struggle all you want. It changes nothing. (Stun refreshed to 1 turn)");
+            } else {
+                System.out.println("Do not move. You are beneath me. (Stun 1)");
+            }
+            hero.setStun(1);
+        }
         
         hero.setHp(hero.getHp() - damageDealt);
     }

@@ -95,28 +95,16 @@ public class ForsakenLands {
     }
 
     public void exploreOutsideArea(Hero hero) {
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                     Forsaken Lands - Outside Area                  ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                                                                    ");
-        System.out.println("       ████████         The lands greet you with a dead smile...    ");
-        System.out.println("    ███▒▒▒▒▒▒▒▒███                                                  ");
-        System.out.println("  ██▒▒  ██  ██  ▒▒██                                                ");
-        System.out.println("  ██▒▒  ██  ██  ▒▒██                                                ");
-        System.out.println("     ███▒▒▒▒▒▒███                                        You        ");
-        System.out.println("       ████████             ███████       ███████      ███████      ");
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-    
+        System.out.println("┌────────────────────────────────────────────────────────────┐");
+        System.out.println("│ ===============               FORSAKEN LANDS               │");
+        System.out.println("│ ||||||   ||||||                                            │");
+        System.out.println("│ ||||||   ||||||                                DANGER!     │");
+        System.out.println("│ ||||||===||||||   - - O - - - - - - O - - - - - - O        │");
+        System.out.println("│ ||||||   ||||||      You                                   │");
+        System.out.println("│ ||||||   ||||||                                            │");
+        System.out.println("│ ===============                                            │");
+        System.out.println("└────────────────────────────────────────────────────────────┘");
+
 
         if(explore){
             if(rand.nextBoolean()){
@@ -201,27 +189,15 @@ public class ForsakenLands {
     }
 
     public void exploreMiddleArea(Hero hero) {
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                     Forsaken Lands - Middle Area                   ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println("       ▒▒▒▒▒▒         Collapsed towers surround you...      █████▒█▒");
-        System.out.println("      ▒██████▒                                             ▒███▒██▒ ");
-        System.out.println("       ▒███████▒                                             █▒████ ");
-        System.out.println("  ▒█████████▒                                              ▒██████  ");
-        System.out.println("     ▒██████████▒           ---    You   ---                ▒███▒██ ");
-        System.out.println("       ▒███████▒                                           ▒▒██▒████");
-        System.out.println("        ▒▒▒▒▒▒▒                                                ▒▒▒▒ ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("┌────────────────────────────────────────────────────────────┐");
+        System.out.println("│ =========  =========             FORSAKEN LANDS            │");
+        System.out.println("│ |||   |||  |||   |||                                       │");
+        System.out.println("│ |||   |||  |||   |||                              DANGER!  │");
+        System.out.println("│ |||===|||  |||===||| - - O - - - - - - O - - - - - - O     │");
+        System.out.println("│ |||   |||  |||   |||                  You                  │");
+        System.out.println("│ |||   |||  |||   |||                                       │");
+        System.out.println("│ =========  =========                                       │");
+        System.out.println("└────────────────────────────────────────────────────────────┘");
         
         if(explore){
             if(rand.nextBoolean()){
@@ -308,30 +284,15 @@ public class ForsakenLands {
 
     public void exploreInnerArea(Hero hero) {
         BattleMechanic battle = new BattleMechanic();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                     Forsaken Lands - Inner Area                    ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                                                                    ");
-        System.out.println("       ░░░░░░░░░░░░░     ░░░░░░░░░░░░░       ░░░░░░░░░░░            ");
-        System.out.println("       ▒▒▒▒▒▓▓▓▒▒▒▒▒     ▒▒▒▒▓▓▓▒▒▒▒▒▒       ▒▒▒▒▓▓▒▒▒▒▒            ");
-        System.out.println("           ▓▓▓               ▓▓▓                 ▓▓▓                ");
-        System.out.println("           ═══               ═══                 ═══                ");
-        System.out.println("           ▓█▓               ▓█▓     Danger!     ▓█▓                ");
-        System.out.println("           ▒█▒               ▒█▒                 ▒█▒                ");
-        System.out.println();
-        System.out.println();
-        System.out.println("           ██════════════════██══════════════════██        You      ");
-        System.out.println("           ██════════════════██══════════════════██═════════════════");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("┌─────────────────────────────────────────────────────────────────────────────┐");
+        System.out.println("│ =========  =========                FORSAKEN LANDS            =========     │");
+        System.out.println("│ |||   |||  |||   |||                                          |||   |||     │");
+        System.out.println("│ |||   |||  |||   |||                                DANGER!   |||   |||     │");
+        System.out.println("│ |||===|||  |||===|||   - - O - - - - - - O - - - - - - O      |||===|||     │");
+        System.out.println("│ |||   |||  |||   |||                                  You     |||   |||     │");
+        System.out.println("│ |||   |||  |||   |||                                          |||   |||     │");
+        System.out.println("│ =========  =========                                          =========     │");
+        System.out.println("└─────────────────────────────────────────────────────────────────────────────┘");
 
         if(explore){
             if(rand.nextBoolean()){
@@ -479,15 +440,10 @@ public class ForsakenLands {
     public void exit() {
         System.out.println();
         System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                      <<< Location Exited >>>                       ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                                                                    ");
-        System.out.println();
-        System.out.println("                    You have left Forsaken Lands.                   ");
-        System.out.println();
-        System.out.println("                                                                    ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
+        System.out.println("┌────────────────────────────────────────────┐");
+        System.out.println("│           <<< Location Exited >>>          │");
+        System.out.println("│       You have left Forsaken Lands.        │");
+        System.out.println("└────────────────────────────────────────────┘");
         System.out.println();
         System.out.println();
     }

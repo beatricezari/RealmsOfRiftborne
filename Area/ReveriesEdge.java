@@ -95,29 +95,17 @@ public class ReveriesEdge {
     }
 
     public void exploreOuterArea(Hero hero) {
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                      Reverie's Edge - Outer Area                   ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println("                        The trees grow darker here...               ");
-        System.out.println("                                                                    ");
-        System.out.println("       ████          ████                      ████          ████   ");
-        System.out.println("     ████████      ████████                  ████████      ████████ ");
-        System.out.println("    ██████████    ██████████════════════════██████████    ██████████");
-        System.out.println("     ████████      ████████                  ████████      ████████ ");
-        System.out.println("        ▒▒            ▒▒                        ▒▒            ▒▒    ");
-        System.out.println("        ▒▒            ▒▒          You           ▒▒            ▒▒    ");
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("┌────────────────────────────────────────────────────────────┐");
+        System.out.println("│             *             REVERIES EDGE      *             │");
+        System.out.println("│        *                                                   │");
+        System.out.println("│  _______________                                  DANGER!  │");
+        System.out.println("│  \\             /    - - O - - - - - - O - - - - - - O      │");
+        System.out.println("│   \\           /        You               *                 │");
+        System.out.println("│    \\         /                                             │");
+        System.out.println("│     \\       /        *             +          *            │");
+        System.out.println("│      \\     /                 +                             │");
+        System.out.println("│       \\   /        *                       *               │");
+        System.out.println("└────────────────────────────────────────────────────────────┘");
 
         if(explore){
             if(rand.nextBoolean()){
@@ -202,30 +190,17 @@ public class ReveriesEdge {
     }
 
     public void exploreMiddleArea(Hero hero) {
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                   Reverie's Edge -- Middle Area                    ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                                                                    ");
-        System.out.println("          The air feels heavy; faint lights flicker in the fog.     ");
-        System.out.println();
-        System.out.println();
-        System.out.println("            ▒▒▒▒▒▒▒▒▒▒           ▓▓▓▓▓▓             ▓▓▓▓▓▓          ");
-        System.out.println("           ▒▒▒▓▓▓▓▓▓▒▒▒       ▓▓▓▓▓▓▒▒▒▒       ▒▒▒▒▓▓▓▓▓▓▓▓▒▒       ");
-        System.out.println("          ▒▒▒▒▒▒▒▒▒▒▒▒▒▒         ▓▓▓▓▓▓             ▓▓▓▓▓▓      You ");
-        System.out.println("           ▒▒▒▓▓▓▓▓▓▒▒▒                                             ");
-        System.out.println("            ▒▒▒▒▒▒▒▒▒▒                                              ");
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-
+        System.out.println("┌───────────────────────────────────────────────────────────────────┐");
+        System.out.println("│                          REVERIES EDGE            *          *    │");
+        System.out.println("│                   *                                               │");
+        System.out.println("│  _______________                                          DANGER! │");
+        System.out.println("│  \\             /     *      - - O - - - - - - O - - - - - - O     │");
+        System.out.println("│   \\           /                              You                  │");
+        System.out.println("│    \\         /__________                                 *        │");
+        System.out.println("│     \\       / \\        /                                          │");
+        System.out.println("│      \\     /   \\      /        *        *           *             │");
+        System.out.println("│       \\   /     \\    /                        *                   │");
+        System.out.println("└───────────────────────────────────────────────────────────────────┘");
         
         if(explore){
             if(rand.nextBoolean()){
@@ -310,34 +285,17 @@ public class ReveriesEdge {
 
     public void exploreInnerArea(Hero hero) {
         BattleMechanic battle = new BattleMechanic();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                      Reverie's Edge - Inner Area                   ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                                                                    ");
-        System.out.println("          The air feels heavy… reality bends in on itself.          ");
-        System.out.println();
-        System.out.println("                     ░░░░░░░░░░░████████░░░░░░░░░░                  ");
-        System.out.println("                  ░░░░▒▒▒▒▒▒▒▒▒██████████▒▒▒▒▒▒▒▒░░░░               ");
-        System.out.println("               ░░░▒▒▒▒▒▒▓▓▓▓▓▓▓█         █▓▓▓▓▓▒▒▒▒▒▒░░░            ");
-        System.out.println("             ░░▒▒▒▒▒▓▓█████████   Danger  ████████▓▓▒▒▒▒░░          ");
-        System.out.println("            ░▒▒▒▓▓██████████████         ██████████████▓▒▒▒░        ");
-        System.out.println("            ▒▒▓██████████████████░░░░░░██████████████████▓▒▒        ");
-        System.out.println("            ▒▓████████████████████▓▓▓▓████████████████████▓▒        ");
-        System.out.println("            ▒▒▓██████████████████████████████████████████▓▒▒        ");
-        System.out.println("             ░▒▒▒▓▓██████████████████████████████████▓▓▒▒▒░         ");
-        System.out.println("               ░░░▒▒▒▒▒▒▓▓▓██████████████████▓▓▓▒▒▒▒▒▒░░░           ");
-        System.out.println("                                                                    ");
-        System.out.println("                                   You                              ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("┌───────────────────────────────────────────────────────────────────────────────────┐");
+        System.out.println("│                                    REVERIES EDGE                *                 │");
+        System.out.println("│                      *                                                *       +   │");
+        System.out.println("│  _______________                                    DANGER!     _______________   │");
+        System.out.println("│  \\             /      - - O - - - - - - O - - - - - - O         \\             /    │");
+        System.out.println("│   \\           /                                      You         \\           /     │");
+        System.out.println("│    \\         /__________                         *                \\         /      │");
+        System.out.println("│     \\       / \\        /        *                                 \\       /       │");
+        System.out.println("│      \\     /   \\      /                          +        *        \\     /        │");
+        System.out.println("│       \\   /     \\    /                 +                            \\   /         │");
+        System.out.println("└───────────────────────────────────────────────────────────────────────────────────┘");
 
         if(explore){
             if(rand.nextBoolean()){
@@ -464,15 +422,10 @@ public class ReveriesEdge {
     public void exit() {
         System.out.println();
         System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                      <<< Location Exited >>>                       ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                                                                    ");
-        System.out.println();
-        System.out.println("                   You have left Reverie's Edge.                    ");
-        System.out.println();
-        System.out.println("                                                                    ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
+        System.out.println("┌────────────────────────────────────────────┐");
+        System.out.println("│           <<< Location Exited >>>          │");
+        System.out.println("│         You have left Reveries Edge.       │");
+        System.out.println("└────────────────────────────────────────────┘");
         System.out.println();
         System.out.println();
     }

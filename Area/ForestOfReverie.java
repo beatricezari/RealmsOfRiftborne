@@ -99,29 +99,15 @@ public class ForestOfReverie {
 
     public void exploreOutsideArea(Hero hero) {
         // This is my current currentArea = 1 
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                    Forest of Reverie - Outside Area                ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                                                                    ");
-        System.out.println("     ▓▓██▓▓                                   ▒▒         ▒▒         ");
-        System.out.println("    ▓▒▒▒▒▒▓         ▒▒▒▒▒▒▒▒▒▒▒▒▒             ▒▒ Danger! ▒▒         ");
-        System.out.println("   ▓▒░░░░▒▓        ▒▒▒▒▓▓▓▓▒▒▒▒               ▒▒─────────▒▒         ");
-        System.out.println("    ▓▒▒▒▒▓        ▒▒▒▒░░░░▒▒▒▒▒                                     ");
-        System.out.println("                ░░░░░────o────────o────────o────────o────░░░░░      ");
-        System.out.println("                   ░░░░░                  You              ░░░░░    ");
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("┌─────────────────────────────────────────────────┐");
+        System.out.println("│||||||            FOREST OF REVERIE              │");
+        System.out.println("│/////                                            │");
+        System.out.println("│////                                 DANGER!     │");
+        System.out.println("│|||\\\\   - - O - - - - - - O - - - - - - O        │");
+        System.out.println("│||| \\\\     You                                   │");
+        System.out.println("│|||  \\\\                                          │");
+        System.out.println("└─────────────────────────────────────────────────┘");
+
         System.out.println();
 
         if(explore){
@@ -208,29 +194,15 @@ public class ForestOfReverie {
     }
 
     public void exploreMiddleArea(Hero hero) {
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                     Forest of Reverie - Middle Area                ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                                                                    ");
-        System.out.println("       ████████         The lands greet you with a dead smile...    ");
-        System.out.println("    ███▒▒▒▒▒▒▒▒███                                                  ");
-        System.out.println("  ██▒▒  ██  ██  ▒▒██                                                ");
-        System.out.println("  ██▒▒  ██  ██  ▒▒██                                                ");
-        System.out.println("     ███▒▒▒▒▒▒███                                        You        ");
-        System.out.println("       ████████             ███████       ███████      ███████      ");
-        System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
-        System.out.println();
+        System.out.println("┌───────────────────────────────────────────────────────────┐");
+        System.out.println("│    /\\  /\\  /\\              FOREST OF REVERIE              │");
+        System.out.println("│   /  \\/  \\/  \\                                            │");
+        System.out.println("│  /_  _\\  /_  _\\                               DANGER!     │");
+        System.out.println("│  / __ \\__/ __ \\  - - O - - - - - - O - - - - - - O        │");
+        System.out.println("│  /_  _\\  /_  _\\                   You                     │");
+        System.out.println("│    ||  ||  ||                                             │");
+        System.out.println("└───────────────────────────────────────────────────────────┘");
+
         System.out.println();
         
         if(explore){
@@ -325,21 +297,15 @@ public class ForestOfReverie {
         System.out.println();
         System.out.println();
         System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                     Forest of Reverie - Inner Area                 ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
+        System.out.println("┌────────────────────────────────────────────────────────────────────────┐");
+        System.out.println("│    /\\  /\\  /\\              FOREST OF REVERIE   *  .  *   /\\* /\\ ./\\* . │");
+        System.out.println("│   /  \\/  \\/  \\                                   * .  * /  \\/  \\/  \\  *│");
+        System.out.println("│  /_  _\\  /_  _\\                               DANGER! */_  _\\  /_  _\\. │");
+        System.out.println("│  / __ \\__/ __ \\  - - O - - - - - - O - - - - - - O  .  / __ \\__/ __ \\ *│");
+        System.out.println("│  /_  _\\  /_  _\\                                 You   ./_  _\\  /_  _\\ .│");
+        System.out.println("│    ||  ||  ||                                     .   *  ||* || .||  * │");
+        System.out.println("└────────────────────────────────────────────────────────────────────────┘");
         System.out.println();
-        System.out.println("       ████▓▓████▓▓████████▓▓████████▓▓████████▓▓████████▓▓██████   ");
-        System.out.println("        █▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓█    ");
-        System.out.println("        █▓▒░░░░░░░░░░░░░░░░░░░░         ░░░░░░░░░░░░░░░░░░░░▒▓██    ");
-        System.out.println("        █▓▒░░███░░███░░███░░███   You   █░░███░░███░░███░░▒▓████    ");
-        System.out.println("        █▓▒░░███░░███░░███░░███         █░░███░░███░░███░░▒▓████    ");
-        System.out.println("        █▓▒░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░▒▓██    ");
-        System.out.println("        █▓▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▒▓████    ");
-        System.out.println("       ████▓▓████▓▓████████▓▓████████▓▓████████▓▓████▓▓██████████   ");
-        System.out.println();
-        System.out.println("                   The Forest is alive and watching...              ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
         System.out.println();
         System.out.println();
 
@@ -473,15 +439,10 @@ public class ForestOfReverie {
     public void exit() {
         System.out.println();
         System.out.println();
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                      <<< Location Exited >>>                       ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
-        System.out.println("                                                                    ");
-        System.out.println();
-        System.out.println("                  You have left Forest of Reverie.                  ");
-        System.out.println();
-        System.out.println("                                                                    ");
-        System.out.println("════════════════════════════════════════════════════════════════════");
+        System.out.println("┌────────────────────────────────────────────┐");
+        System.out.println("│           <<< Location Exited >>>          │");
+        System.out.println("│       You have left Forest of Reverie.     │");
+        System.out.println("└────────────────────────────────────────────┘");
         System.out.println();
         System.out.println();
     }
