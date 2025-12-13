@@ -311,7 +311,7 @@ public class LibraryNarration {
 
                 String answer3 = scanner.nextLine();
 
-                if ((answer3.equalsIgnoreCase("Time") && hero.getGunnerCharacterChosen()) || (answer3.equalsIgnoreCase("Guilt") && hero.getMageCharacterChosen()) || (answer3.equalsIgnoreCase("Trials") && hero.getSwordmanCharacterChosen())) {
+                if ((answer3.equalsIgnoreCase("Time") && hero.getGunnerCharacterChosen()) || (answer3.equalsIgnoreCase("Guilt") && hero.getMageCharacterChosen()) || ((answer3.equalsIgnoreCase("Trials") || answer3.equals("Trial") || (answer3.equalsIgnoreCase("Challenges"))) && hero.getSwordmanCharacterChosen())) {
                     separatorHandler.promptSeparatorResized();
                     System.out.println("┌─────────────────────────┐");
                     System.out.println("│   Correct! Well done!   │");
