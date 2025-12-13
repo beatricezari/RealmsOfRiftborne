@@ -120,7 +120,7 @@ public class Training {
                 System.out.println();
                 System.out.println();
                 System.out.println();
-                statProgressHandler.displayXPandLevel(hero, 2500);
+                //statProgressHandler.displayXPandLevel(hero, 2500);
                 System.out.println();
                 System.out.println("┌───────────────────────────────────┐");
                 System.out.println("│  Press ENTER to claim rewards...  │");
@@ -136,6 +136,8 @@ public class Training {
                 scanner.nextLine();
 
                 hero.setFinishedAllTraining(true);
+                hero.unlockArea1();
+              
                 break;
             }
 
