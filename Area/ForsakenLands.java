@@ -26,8 +26,8 @@ public class ForsakenLands {
     EndingPlot endingplotHandler = new EndingPlot();
 
     public void enter(Hero hero) {
-        hero.setLevel(55); // for testing
-        hero.levelUp(101); // for testing
+        // hero.setLevel(59); // for testing
+        // hero.levelUp(101); // for testing
         System.out.println();
         System.out.println("┌────────────────────────────────────────────┐");
         System.out.println("│     You have entered the Forsaken Lands.   │");
