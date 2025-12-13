@@ -4,9 +4,11 @@ import java.util.*;
 import Hero.*;
 import DesignRelated.*;
 import Narration.*;
+import java.text.DecimalFormat;
 
 public class Inventory {
     Scanner sc = new Scanner(System.in);
+    DecimalFormat df = new DecimalFormat("#,##0");
     ShopRelated shopHandler = new ShopRelated();
     Narration separatorHandler = new Narration();
 
@@ -199,7 +201,7 @@ public class Inventory {
         System.out.println("┌───────────────────────────────────────────┐");
         System.out.println("│ + You used a Small Health Potion (+20%) + │");
         System.out.println("└───────────────────────────────────────────┘");
-        System.out.println("│  [ HP : healed ]" + healAmount + " -> " + hero.getHp());
+        System.out.println("│  [ HP : healed ]" + df.format(healAmount) + " -> " + df.format(hero.getHp()));
     }
 
     public void useMediumHealthPotion(Hero hero){
@@ -210,7 +212,7 @@ public class Inventory {
         System.out.println("┌────────────────────────────────────────────┐");
         System.out.println("│ + You used a Medium Health Potion (+45%) + │");
         System.out.println("└────────────────────────────────────────────┘");
-        System.out.println("| [ HP : healed ]" + healAmount + " -> " + hero.getHp());
+        System.out.println("| [ HP : healed ]" + df.format(healAmount) + " -> " + df.format(hero.getHp()));
     }
 
     public void useLargeHealthPotion(Hero hero){
@@ -221,7 +223,7 @@ public class Inventory {
         System.out.println("┌───────────────────────────────────────────┐");
         System.out.println("│ + You used a Large Health Potion (+70%) + │");
         System.out.println("└───────────────────────────────────────────┘");
-        System.out.println("| [ HP : healed ]" + healAmount + " -> " + hero.getHp());
+        System.out.println("| [ HP : healed ]" + df.format(healAmount) + " -> " + df.format(hero.getHp()));
     }
 
     public void useSmallManaPotion(Hero hero){
@@ -232,7 +234,7 @@ public class Inventory {
         System.out.println("┌─────────────────────────────────────────┐");
         System.out.println("│ + You used a Small Mana Potion (+20%) + │");
         System.out.println("└─────────────────────────────────────────┘");
-        System.out.println("| [ Mana : restored ]" + manaAmount + " -> " + hero.getMana());
+        System.out.println("| [ Mana : restored ]" + df.format(manaAmount) + " -> " + df.format(hero.getMana()));
     }
 
     public void useMediumManaPotion(Hero hero){
@@ -243,7 +245,7 @@ public class Inventory {
         System.out.println("┌──────────────────────────────────────────┐");
         System.out.println("│ + You used a Medium Mana Potion (+45%) + │");
         System.out.println("└──────────────────────────────────────────┘");
-        System.out.println("| [ Mana : restored ]" + manaAmount + " -> " + hero.getMana());
+        System.out.println("| [ Mana : restored ]" + df.format(manaAmount) + " -> " + df.format(hero.getMana()));
     }
 
     public void useLargeManaPotion(Hero hero){
@@ -254,7 +256,7 @@ public class Inventory {
         System.out.println("┌─────────────────────────────────────────┐");
         System.out.println("│ + You used a Large Mana Potion (+70%) + │");
         System.out.println("└─────────────────────────────────────────┘");
-        System.out.println("| [ Mana : restored ]" + manaAmount + " -> " + hero.getMana());
+        System.out.println("| [ Mana : restored ]" + df.format(manaAmount) + " -> " + df.format(hero.getMana()));
     }
 
     // ==== SETTERS ====
