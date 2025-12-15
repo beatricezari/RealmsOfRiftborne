@@ -15,6 +15,7 @@ public class ForsakenLands {
     DecimalFormat df = new DecimalFormat("#,##0");
     MobBattleMechanic mobBattle = new MobBattleMechanic();
     EliteBattleMechanic eliteBattle = new EliteBattleMechanic();
+    
     Stats reward = new Stats();
     boolean retreat = false;
     boolean explore = true;
@@ -22,6 +23,7 @@ public class ForsakenLands {
     int goldGained, expGained;
     int currentArea = 0;
 
+    Narration narrationPrinter = new Narration();
     Narration separatorHandler =  new Narration();
     EndingPlot endingplotHandler = new EndingPlot();
 
@@ -76,6 +78,15 @@ public class ForsakenLands {
                 System.out.println();
 
                 if (choice == 'y') {
+
+                    System.out.println("Press ENTER to continue...");
+                    scan.nextLine();
+                    scan.nextLine();
+
+                    System.out.println();
+                    System.out.println();
+                    System.out.println();
+
                     System.out.println("You step into a realm where hope seems to have perished...");
                     retreat = false;
                     explore = true;
@@ -136,6 +147,16 @@ public class ForsakenLands {
         if(retreat){
             if(rand.nextBoolean()){
                 System.out.println("Something crawls from the ashes to block your retreat!");
+
+                System.out.println();
+                System.out.println("Press ENTER to continue...");
+                scan.nextLine();
+                scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
                     MobBattleMechanic.run = false;
@@ -207,6 +228,16 @@ public class ForsakenLands {
         if(explore){
             if(rand.nextBoolean()){
                 System.out.println("From the ruins, a twisted wraith rises and attacks!");
+
+                System.out.println();
+                System.out.println("Press ENTER to continue...");
+                scan.nextLine();
+                scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
                     MobBattleMechanic.run = false;
@@ -229,6 +260,16 @@ public class ForsakenLands {
         if(retreat){
             if(rand.nextBoolean()){
                 System.out.println("A cursed spirit follows you as you retreat!");
+
+                System.out.println();
+                System.out.println("Press ENTER to continue...");
+                scan.nextLine();
+                scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
                     MobBattleMechanic.run = false;
@@ -302,6 +343,16 @@ public class ForsakenLands {
         if(explore){
             if(rand.nextBoolean()){
                 System.out.println("The air grows thick... the ground trembles beneath your feet...");
+
+                System.out.println();
+                System.out.println("Press ENTER to continue...");
+                scan.nextLine();
+                scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = eliteBattle.fight(hero, new HollowKing());
                 if(EliteBattleMechanic.run) {
                     EliteBattleMechanic.run = false;
@@ -323,7 +374,7 @@ public class ForsakenLands {
 
         String[] azraelIntro = {
             "You step into a vast crater filled with bones and ash...",
-            "The wind whispers — 'All souls end here.'",
+            "The wind whispers - 'All souls end here.'",
             "A towering figure descends from the crimson sky, its wings tattered yet divine...",
             "A deep, echoing voice speaks: 'I am Azrael... the Harbinger of Ruin.'",
             "Darkness itself bends before his presence."
@@ -398,7 +449,7 @@ public class ForsakenLands {
                         break;
 
                     } else {
-                        System.out.println("\n\nAzrael's divine scythe strikes true — darkness consumes you...");
+                        System.out.println("\n\nAzrael's divine scythe strikes true - darkness consumes you...");
                         System.out.println("You are rescued by fellow adventurers and taken back to the academy.");
                         exit();
                         currentArea = 0; // automatically exits the FORSAKEN LANDS
@@ -424,14 +475,20 @@ public class ForsakenLands {
         }
     }
 
-    public static void playSection(String[] section) {
+    public void playSection(String[] section) {
         System.out.println("\nPress ENTER to continue...");
         scan.nextLine();
-        
+
         for (int i = 0; i < section.length; i++) {
+            narrationPrinter.printWithDelay(section[i], 10); 
+            System.out.println("\n");
+        }
+        
+        /*for (int i = 0; i < section.length; i++) {
             scan.nextLine();
             System.out.println(section[i]);
         }
+            */
         System.out.println(); 
     }
     

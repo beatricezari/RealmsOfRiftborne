@@ -77,6 +77,10 @@ public class ForestOfReverie {
                     scan.nextLine();
                     scan.nextLine();
 
+                    System.out.println();
+                    System.out.println();
+                    System.out.println();
+
                     System.out.println("Exploring the mystical Forest of Reverie...");
                     retreat = false;
                     explore = true;
@@ -123,6 +127,10 @@ public class ForestOfReverie {
                 scan.nextLine();
                 scan.nextLine();
 
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
                     MobBattleMechanic.run = false;
@@ -150,6 +158,10 @@ public class ForestOfReverie {
                 System.out.println("Press ENTER to continue...");
                 scan.nextLine();
                 scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
 
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
@@ -230,6 +242,10 @@ public class ForestOfReverie {
                 scan.nextLine();
                 scan.nextLine();
 
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
                     MobBattleMechanic.run = false;
@@ -257,6 +273,10 @@ public class ForestOfReverie {
                 System.out.println("Press ENTER to continue...");
                 scan.nextLine();
                 scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
 
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
@@ -345,6 +365,10 @@ public class ForestOfReverie {
                 System.out.println("Press ENTER to continue...");
                 scan.nextLine();
                 scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
 
 
                 boolean heroWon = eliteBattle.fight(hero, new MudLurker());

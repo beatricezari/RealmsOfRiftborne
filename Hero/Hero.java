@@ -696,9 +696,9 @@ public class Hero {
 
     // Area Progress
     // Office Progress______________________________________________________________________________
-    private boolean canEnterArea1 = true; 
-    private boolean canEnterArea2 = true;
-    private boolean canEnterArea3 = true;
+    private boolean canEnterArea1 = false; 
+    private boolean canEnterArea2 = false;
+    private boolean canEnterArea3 = false;
     private boolean haveEntered = false;
 
     public boolean haveEntered() {
@@ -734,9 +734,9 @@ public class Hero {
     }
 
     // Area unlock tracking in Hero class
-    private boolean unlockedArea1 = true;
-    private boolean unlockedArea2 = true;
-    private boolean unlockedArea3 = true;
+    private boolean unlockedArea1 = false;
+    private boolean unlockedArea2 = false;
+    private boolean unlockedArea3 = false;
 
     // --- Setters ---
     public void setUnlockArea1(boolean status) {
@@ -802,7 +802,7 @@ public class Hero {
     private boolean finishedDurability = false;
     private boolean finishedManaRefinement = false;
     private int numberOfTrainingFinished = 0;
-    private boolean finishedAllTraining = false; // default
+    private boolean finishedAllTraining = false; 
     private boolean haveExploredButExited = false;
     private boolean haveAcceptedButExited = false;
 

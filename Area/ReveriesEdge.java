@@ -4,7 +4,7 @@ import Boss.*;
 import DesignRelated.*;
 import Hero.*;
 import Mobs.*;
-import Narration.*; // Javines | Plot 
+import Narration.*; 
 import java.text.DecimalFormat;
 import java.util.*;
 
@@ -14,7 +14,7 @@ public class ReveriesEdge {
     DecimalFormat df = new DecimalFormat("#,##0");
     MobBattleMechanic mobBattle = new MobBattleMechanic();
     EliteBattleMechanic eliteBattle = new EliteBattleMechanic();
-    GunnerPlot gunnerPlotHandler = new GunnerPlot(); // Javines | Plot
+    Narration narrationPrinter = new Narration();
     Stats reward = new Stats();
     boolean retreat = false;
     boolean explore = true;
@@ -73,6 +73,16 @@ public class ReveriesEdge {
                 System.out.println();
 
                 if (choice == 'y') {
+
+                    System.out.println();
+                    System.out.println("Press ENTER to continue...");
+                    scan.nextLine();
+                    scan.nextLine();
+
+                    System.out.println();
+                    System.out.println();
+                    System.out.println();
+
                     System.out.println("You step toward the dark borderlands of Reverie's Edge...");
                     retreat = false;
                     explore = true;
@@ -110,6 +120,15 @@ public class ReveriesEdge {
         if(explore){
             if(rand.nextBoolean()){
                 System.out.println("A corrupted beast emerges from the shadows!");
+
+                System.out.println();
+                System.out.println("Press ENTER to continue...");
+                scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
                     MobBattleMechanic.run = false;
@@ -132,6 +151,16 @@ public class ReveriesEdge {
         if(retreat){
             if(rand.nextBoolean()){
                 System.out.println("You try to leave, but a lurking shade attacks!");
+
+                System.out.println();
+                System.out.println("Press ENTER to continue...");
+                scan.nextLine();
+                scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
                     MobBattleMechanic.run = false;
@@ -205,6 +234,16 @@ public class ReveriesEdge {
         if(explore){
             if(rand.nextBoolean()){
                 System.out.println("A shadowy creature blocks your path!");
+
+                System.out.println();
+                System.out.println("Press ENTER to continue...");
+                scan.nextLine();
+                scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
                     MobBattleMechanic.run = false;
@@ -226,6 +265,16 @@ public class ReveriesEdge {
         if(retreat){
             if(rand.nextBoolean()){
                 System.out.println("Something follows you as you retreat, preparing to strike!");
+
+                System.out.println();
+                System.out.println("Press ENTER to continue...");
+                scan.nextLine();
+                scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = mobBattle.fight(hero, randomMob());
                 if(MobBattleMechanic.run) {
                     MobBattleMechanic.run = false;
@@ -300,6 +349,16 @@ public class ReveriesEdge {
         if(explore){
             if(rand.nextBoolean()){
                 System.out.println("You walk through an eerie clearing... and the ground trembles!");
+
+                System.out.println();
+                System.out.println("Press ENTER to continue...");
+                scan.nextLine();
+                scan.nextLine();
+
+                System.out.println();
+                System.out.println();
+                System.out.println();
+
                 boolean heroWon = eliteBattle.fight(hero, new FadingWarden());
                 if(EliteBattleMechanic.run) {
                     EliteBattleMechanic.run = false;
@@ -398,14 +457,21 @@ public class ReveriesEdge {
         }
     }
 
-    public static void playSection(String[] section) {
+    public void playSection(String[] section) {
         System.out.println("\nPress ENTER to continue...");
         scan.nextLine();
-        
+        scan.nextLine();
+
         for (int i = 0; i < section.length; i++) {
+            narrationPrinter.printWithDelay(section[i], 10); 
+            System.out.println("\n");
+        }
+        
+        /*for (int i = 0; i < section.length; i++) {
             scan.nextLine();
             System.out.println(section[i]);
         }
+            */
         System.out.println(); 
     }
     
