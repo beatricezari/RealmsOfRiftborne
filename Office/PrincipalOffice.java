@@ -51,7 +51,6 @@ public class PrincipalOffice extends StatProgress {
 
             separatorHandler.promptSeparatorResized();
             currencyProgress(hero);
-            scanner.nextLine();
 
             eligible = true;
         }
@@ -80,8 +79,6 @@ public class PrincipalOffice extends StatProgress {
 
             separatorHandler.promptSeparatorResized();
             currencyProgress(hero);
-            scanner.nextLine();
-
             eligible = true;
         }
 
@@ -109,7 +106,6 @@ public class PrincipalOffice extends StatProgress {
 
             separatorHandler.promptSeparatorResized();
             currencyProgress(hero);
-            scanner.nextLine();
 
             eligible = true;
         }
